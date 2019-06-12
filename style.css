@@ -1,0 +1,36 @@
+iframe {
+	position: fixed;
+	height: 400px;
+	width: 500px;
+	left: 106px;
+	top: 55px;
+	border: 1px solid #000;
+}
+
+#sidebar{
+	width: 100px;
+	position: absolute;
+	border: 1px solid #000;
+	height: 400px;
+	left:1px;
+	top:55px;
+}
+
+#topbar{
+	width: 605px;
+	position:absolute;
+	left: 1px;
+	top: 1px;
+	height: 48px;
+	border: 1px solid #000;
+}
+
+#bVectorWork {
+	position: absolute;
+	left: 1px;
+	top: 1px;
+	border: 1px solid #000;
+	width: 96px;
+	height: 18px;
+	text-align: center;
+}
