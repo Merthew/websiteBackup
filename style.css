@@ -50,6 +50,7 @@ iframe {
 	width: 96px;
 	height: 18px;
 	text-align: center;
+	cursor: pointer;
 }
 
 #bVectorWork {
@@ -60,4 +61,5 @@ iframe {
 	width: 96px;
 	height: 18px;
 	text-align: center;
+	cursor: pointer;
 }

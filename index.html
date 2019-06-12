@@ -9,11 +9,11 @@
 		<div id="topbar">
 		</div>
 		<div id="sidebar">
-			<div id="bHome" onclick="changeIFrame(0)">Home</div>
-			<div id="bVectorWork" onclick="changeIFrame(1)">Vectors</div>
+			<div id="bHome" onclick="changeIFrame(0)" onmouseover="shadeButton(0)" onmouseleave="unshadeButton(0)">Home</div>
+			<div id="bVectorWork" onclick="changeIFrame(1)" onmouseover="shadeButton(1)" onmouseleave="unshadeButton(1)">Vectors</div>
 		</div>
 		
-		<iframe id="VectorWorkFrame" src="Home/home.html"></iframe>
+		<iframe id="Frame" src="Home/home.html"></iframe>
 		
 		<div id="bottombar"></div>
 		
