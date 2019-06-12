@@ -3,17 +3,19 @@
 		<title>Aleph_Null</title>
 		 <link rel="shortcut icon" href="null_icon.ico" />
 		<link href="style.css" rel="stylesheet" type="text/css">
-		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="index.js"></script>
 	</head>
 	<body>
 		<div id="topbar">
 		</div>
 		<div id="sidebar">
+			<div id="bHome" onclick="changeIFrame(0)">Home</div>
 			<div id="bVectorWork" onclick="changeIFrame(1)">Vectors</div>
 		</div>
-		<div id="content">
-			<iframe id="VectorWorkFrame" src="VectorWork/vectorwork.html">
-		</div>
+		
+		<iframe id="VectorWorkFrame" src="Home/home.html"></iframe>
+		
+		<div id="bottombar"></div>
 		
 		
 	</body>

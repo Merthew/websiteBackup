@@ -1,7 +1,15 @@
+body {
+	position: absolute;
+	width: 800px;
+	height: 800px;
+	margin: 10px;
+	border: 1px solid #000;
+}
+
 iframe {
-	position: fixed;
-	height: 400px;
-	width: 500px;
+	position: absolute;
+	height: 687px;
+	width: 691px;
 	left: 106px;
 	top: 55px;
 	border: 1px solid #000;
@@ -11,13 +19,13 @@ iframe {
 	width: 100px;
 	position: absolute;
 	border: 1px solid #000;
-	height: 400px;
+	height: 687px;
 	left:1px;
 	top:55px;
 }
 
 #topbar{
-	width: 605px;
+	width: 796px;
 	position:absolute;
 	left: 1px;
 	top: 1px;
@@ -25,10 +33,29 @@ iframe {
 	border: 1px solid #000;
 }
 
-#bVectorWork {
+#bottombar {
+	position: absolute;
+	width: 796px;
+	height: 48px;
+	left: 1px;
+	bottom: 1px;
+	border: 1px solid #000;
+}
+
+#bHome {
 	position: absolute;
 	left: 1px;
 	top: 1px;
+	border: 1px solid #000;
+	width: 96px;
+	height: 18px;
+	text-align: center;
+}
+
+#bVectorWork {
+	position: absolute;
+	left: 1px;
+	top: 22px;
 	border: 1px solid #000;
 	width: 96px;
 	height: 18px;
