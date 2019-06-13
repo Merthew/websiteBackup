@@ -4,6 +4,10 @@ setInterval(() => {
 	var input1 = document.getElementById("input_one").value;
 	var input2 = document.getElementById("input_two").value;
 	
+	if(input1 === "" && input2 === ""){
+		document.getElementById("output").innerHTML = "Enter the vectors as <x,y,z>.".replace('<','&lt;').replace('>','&gt;')
+	}
+	
 	if(input1.charAt(0) == "<" && input2 === ""){
 		
 		var a = Number(input1.substring(1, input1.indexOf(",")));
@@ -12,8 +16,10 @@ setInterval(() => {
 		input1 = input1.substring(input1.indexOf(",") + 1);
 		var c = Number(input1.substring(0, input1.indexOf(">")));
 		
+		var angle = Math.atan(b/a);
+		
 		var length = Math.sqrt(a*a + b*b + c*c);
-		document.getElementById("output").innerHTML = "|V| = " + length.toFixed(4) + "     sqrt(" + (length*length).toFixed(2) + ")";
+		document.getElementById("output").innerHTML = "|V| = " + length.toFixed(4) + "     sqrt(" + (length*length).toFixed(2) + ")<br>Cylindrical: <" + angle.toFixed(3) + "rad," + length.toFixed(3) + "," + c + ">";
 	}
 	
 	

@@ -33,6 +33,12 @@ iframe {
 	border: 1px solid #000;
 }
 
+#logo {
+	position:absolute;
+	width: 128px;
+	top: 5px;
+}
+
 #bottombar {
 	position: absolute;
 	width: 796px;
