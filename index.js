@@ -38,3 +38,115 @@ function unshadeButton(num) {
 		break;
 	}
 }
+
+var r = 0;
+var g = 0;
+var b = 0;
+var finished = true;
+var goal = 0;
+setInterval(() => {
+	if(finished){
+		console.log(goal);
+		goal = Math.floor(Math.random() * 6) + 1;
+		finished = false;
+	}
+	else{
+		switch(goal){
+			case 1:
+				if(r <= 200){
+					r ++;
+				}
+				if(g > 0) {
+					g --;
+				}
+				if(b > 0) {
+					b --;
+				}
+				
+				if(r >= 200){
+					finished = true;
+				}
+				break;
+			case 2:
+				if(r > 0){
+					r --;
+				}
+				if(g <= 200) {
+					g ++;
+				}
+				if(b > 0) {
+					b --;
+				}
+				
+				if(g >= 200){
+					finished = true;
+				}
+				break;
+			case 3:
+				if(r > 0){
+					r --;
+				}
+				if(g > 0) {
+					g --;
+				}
+				if(b <= 200) {
+					b ++;
+				}
+				
+				if(b >= 200){
+					finished = true;
+				}
+				break;
+			case 4:
+				if(r <= 200){
+					r ++;
+				}
+				if(g <= 200) {
+					g ++;
+				}
+				if(b > 0) {
+					b --;
+				}
+				
+				if(r >= 200 && g >= 200){
+					finished = true;
+				}
+				break;
+			case 5:
+				if(r > 0){
+					r --;
+				}
+				if(g <= 200) {
+					g ++;
+				}
+				if(b <= 200) {
+					b ++;
+				}
+				
+				if(b >= 200 && g >= 200){
+					finished = true;
+				}
+				break;
+			case 6:
+				if(r <= 200){
+					r ++;
+				}
+				if(g > 0) {
+					g --;
+				}
+				if(b <= 200) {
+					b ++;
+				}
+				
+				if(r >= 200 && b >= 200){
+					finished = true;
+				}
+				break;
+		}
+	}
+
+	
+	var sidebar = document.getElementById("sidebar");
+	sidebar.style.background = "linear-gradient(to top, rgb(" + r + "," + g + "," + b +"), #000)";
+	
+}, 1000/30);
