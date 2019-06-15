@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<title>This Is A Game</title>
+		<link href="style.css" rel="stylesheet" type="text/css">
+		
+		
+	</head>
+	<body onload="startup()">
+		<!---->
+		<div id="wrapper">
+			<!--Startup Screen with logo-->
+			<div id="screenStartup"></div>
+			
+			<!--The resource bar is independent of the page switching.-->
+			<!--Resource Layout-->
+			<div id="topBar">
+				<div id="resourceBar">
+					<div id="cashDisp">$000</div>
+					<div id="matterDisp">000 Matter</div>
+					<div id="infinityDisp">000 Δ∞</div>
+				</div>
+			</div>
+			
+			<!--First Page-->
+			<div id="screen1">
+				<!--The first producer of cash-->
+				<div id="research">
+					<!--The stats about the research bar.-->
+					<div id="researchStats">
+						<div id="researchLevel1">Level: 0</div>
+						<div id="researchLevel2">Level: 0</div>
+						<div id="researchBar1CurrentSpeed">0</div>
+						<div id="researchBar2CurrentSpeed">0</div>
+						
+						<div id="researchPoints">0 RP</div>
+						<div id="researchPointPrice">Price: $0.00</div>
+						<input type="button" id="b_sellResearch" onclick="sellResearch()" value="Sell Research">
+					</div>
+					
+					<!--The first research bar-->
+					<div id="researchBar1">
+						<div id="researchBar1Progress"></div>
+						<div id="researchBar1Text">0.00%</div>
+					</div>
+					
+					<!--The second research bar-->
+					<div id="researchBar2">
+						<div id="researchBar2Progress"></div>
+						<div id="researchBar2Text">0.00%</div>
+					</div>
+					
+				</div>
+				
+				<div id="researchPurchases">
+					<div id="researchPurchaseTooltipBorder"></div>
+					<a><img src="images/icons/I_Researchlevel_U.png" id="I_Researchlevel" onclick="buyResearchLevel()"><span id="I_Researchlevel_tooltip">This is a tooltip.</span></a>
+					<a><img src="images/icons/I_ResearchPower_U.png" id="I_ResearchPower" onclick="buyResearchPower()"><span id="I_ResearchPower_tooltip">This is a tooltip.</span></a>3
+				</div>
+			</div>
+			
+			<!--Second Page-->
+			<div id="screen2">
+				
+			</div>
+			
+			<!--Third Page-->
+			<div id="screen3">
+				
+			</div>
+			
+			<!--Achievements Page-->
+			<div id="screenA">
+				
+			</div>
+			
+			<!--Settings Page-->
+			<div id="screenS">
+				<input type="button" id="b_clear_save" onclick="clearSave()" value="Wipe Save">
+			</div>
+			
+			<!--Page Navigation Bar-->
+			<div id="bottomBar">
+				<input type="button" id="b_screen_1" onclick="swapDisp(1)" value="Research">
+				<input type="button" id="b_screen_2" onclick="swapDisp(2)" value="Screen 2">
+				<input type="button" id="b_screen_3" onclick="swapDisp(3)" value="Screen 3">
+				<input type="button" id="b_screen_a" onclick="swapDisp(4)" value="Achievements">
+				<input type="button" id="b_screen_s" onclick="swapDisp(5)" value="Settings">
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript" src="stock.js"></script>
+	<script type="text/javascript">window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName=='INPUT'&&e.target.type=='button'){e.preventDefault();return false;}}},true);</script>
+</html>

@@ -9,6 +9,9 @@ function changeIFrame(num){
 	case 1:
 		iframe.src = "VectorWork/vectorwork.html";
 		break;
+	case 2:
+		iframe.src = "ThisIsAGame/TIAG.html";
+		break;
 	}
 	
 }
@@ -23,6 +26,10 @@ function shadeButton(num) {
 		var shadeButton = document.getElementById("bVectorWork");
 		shadeButton.style.backgroundColor = "#B5B5B5";
 		break;
+	case 2:
+		var shadeButton = document.getElementById("bTIAGv2");
+		shadeButton.style.backgroundColor = "#B5B5B5";
+		break;
 	}
 }
 
@@ -34,6 +41,10 @@ function unshadeButton(num) {
 		break;
 	case 1:
 		var shadeButton = document.getElementById("bVectorWork");
+		shadeButton.style.backgroundColor = "#FFF";
+		break;
+	case 2:
+		var shadeButton = document.getElementById("bTIAGv2");
 		shadeButton.style.backgroundColor = "#FFF";
 		break;
 	}
@@ -63,7 +74,7 @@ setInterval(() => {
 					b --;
 				}
 				
-				if(r >= 200){
+				if(r >= 200 && g <= 0 && b <= 0){
 					finished = true;
 				}
 				break;
@@ -78,7 +89,7 @@ setInterval(() => {
 					b --;
 				}
 				
-				if(g >= 200){
+				if(g >= 200 && r <= 0 && b <= 0){
 					finished = true;
 				}
 				break;
@@ -93,7 +104,7 @@ setInterval(() => {
 					b ++;
 				}
 				
-				if(b >= 200){
+				if(b >= 200 && r <= 0 && g <= 0){
 					finished = true;
 				}
 				break;
@@ -108,7 +119,7 @@ setInterval(() => {
 					b --;
 				}
 				
-				if(r >= 200 && g >= 200){
+				if(r >= 200 && g >= 200 && b <= 0){
 					finished = true;
 				}
 				break;
@@ -123,7 +134,7 @@ setInterval(() => {
 					b ++;
 				}
 				
-				if(b >= 200 && g >= 200){
+				if(b >= 200 && g >= 200 && r <= 0){
 					finished = true;
 				}
 				break;
@@ -138,7 +149,7 @@ setInterval(() => {
 					b ++;
 				}
 				
-				if(r >= 200 && b >= 200){
+				if(r >= 200 && b >= 200 && g <= 0){
 					finished = true;
 				}
 				break;
