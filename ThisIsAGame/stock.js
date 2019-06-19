@@ -9,7 +9,7 @@ function callStock(){
     if (game.researchCashCost < game.researchLowerBound) mod = 0.00001;
     var sig = (Math.random() >= mod) ? 1 : -1;
 	
-	var maxToAdd = ((sig > 0) ? game.researchUpperFlux : game.researchLowerFlux) * game.researchCashCost;
+	var maxToAdd = ((sig > 0) ? game.researchUpperFlux : game.researchLowerFlux) * game.researchUpperBound;
 	game.researchCashCost += (Math.random() * maxToAdd * sig);
 	
 }

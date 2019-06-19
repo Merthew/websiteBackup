@@ -12,6 +12,9 @@ function changeIFrame(num){
 	case 2:
 		iframe.src = "ThisIsAGame/TIAG.html";
 		break;
+	case 3:
+		iframe.src = "HMan/hman.html";
+		break;
 	}
 	
 }
@@ -30,6 +33,10 @@ function shadeButton(num) {
 		var shadeButton = document.getElementById("bTIAGv2");
 		shadeButton.style.backgroundColor = "#B5B5B5";
 		break;
+	case 3:
+		var shadeButton = document.getElementById("bHMAN");
+		shadeButton.style.backgroundColor = "#B5B5B5";
+		break;
 	}
 }
 
@@ -45,6 +52,10 @@ function unshadeButton(num) {
 		break;
 	case 2:
 		var shadeButton = document.getElementById("bTIAGv2");
+		shadeButton.style.backgroundColor = "#FFF";
+		break;
+	case 3:
+		var shadeButton = document.getElementById("bHMAN");
 		shadeButton.style.backgroundColor = "#FFF";
 		break;
 	}

@@ -1,0 +1,380 @@
+body {
+	background-color: white;
+	border:1px solid #000;
+	width:800px;
+	height:800px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	font: 14px Times New Roman;
+	font-family: monospace;
+	
+}
+
+#topbar {
+	width: 800px;
+	background-color: #E2E2E2;
+	height: 18px;
+	position: absolute;
+	top: 0px;
+	left:0px;
+	border-bottom: 1px solid #8F8F8F;
+	text-align: center;
+}
+
+#cashbalance {
+	width: 200px;
+	background-color: #CFCFCF;
+	height: 100%;
+	border-right: 1px solid #8F8F8F;
+}
+
+#currentElement{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 200px;
+	height: 100%;
+	text-align: center;
+	background-color: #CFCFCF;
+	border-left: 1px solid #8F8F8F;
+	cursor: pointer;
+}
+
+#main {
+	background: #F2F2F2;
+	width: 100%;
+	height: 781px;
+	position: absolute;
+	top: 19px;
+}
+
+.ibutton{
+	border-radius: 50%;
+	width: 16px;
+	height: 16px;
+	border: 1px solid #000;
+}
+
+#buttonInventory {
+	display: block;
+	position: absolute;
+	right: 1px;
+	bottom: 1px;
+	background-image: url("images/ico/bag.png");
+	cursor: pointer;
+}
+
+#buttonSettings {
+	display: block;
+	position: absolute;
+	right: 1px;
+	bottom: 21px;
+	background-image: url("images/ico/gear.png");
+	cursor: pointer;
+}
+
+#buttonAchievements {
+	position: absolute;
+	right: 1px;
+	bottom: 41px;
+	background-image: url("images/ico/cup.png");
+	cursor: pointer;
+}
+
+#inventory {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	visibility: hidden;
+	top: 0px;
+	left:0px;
+	background: #F2F2F2;
+}
+
+#inventory.show {
+	visibility: visible;
+	-webkit-animation: fadein 0.5s, fadeout 0.5s;
+	animation: fadein 0.5s, fadeout 0.5s;
+}
+
+#settings {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	visibility: hidden;
+	top: 0px;
+	left:0px;
+	background: #F2F2F2;
+}
+
+#settings.show {
+	visibility: visible;
+	-webkit-animation: fadein 0.5s, fadeout 0.5s;
+	animation: fadein 0.5s, fadeout 0.5s;
+}
+
+#achievements {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	visibility: hidden;
+	top: 0px;
+	left:0px;
+	background: #F2F2F2;
+}
+
+#achievements.show {
+	visibility: visible;
+	-webkit-animation: fadein 0.5s, fadeout 0.5s;
+	animation: fadein 0.5s, fadeout 0.5s;
+}
+
+#table {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	visibility: hidden;
+	top: 0px;
+	left:0px;
+	background: rgb(168,168,168,0.5);
+}
+
+#table.show {
+	visibility: visible;
+	-webkit-animation: fadein 0.5s, fadeout 0.5s;
+	animation: fadein 0.5s, fadeout 0.5s;
+}
+
+#background {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left:0px;
+	background: #F2F2F2;
+}
+
+#buttonInventoryClose {
+	display: block;
+	position: absolute;
+	right: 1px;
+	bottom: 1px;
+	background-image: url("images/ico/bag.png");
+	cursor: pointer;
+}
+
+#buttonSettingsClose {
+	display: block;
+	position: absolute;
+	right: 1px;
+	bottom: 21px;
+	background-image: url("images/ico/gear.png");
+	cursor: pointer;
+}
+
+#buttonAchievementsClose {
+	position: absolute;
+	right: 1px;
+	bottom: 41px;
+	background-image: url("images/ico/cup.png");
+	cursor: pointer;
+}
+
+#hydrogenTank {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	width: 780px;
+	height: 26px;
+	background: #E5E5E5;
+}
+
+#hydrogenText {
+	position: absolute;
+	left: 2px;
+	top: 0px;
+}
+
+#hydrogenBar {
+	height: 4px;
+	width: 10px;
+	max-width: 776px;
+	position: absolute;
+	left: 2px;
+	bottom: 2px;
+	background: #70C9C9;
+}
+
+#news {
+	position: absolute;
+	left: 10px;
+	top: 48px;
+	width: 300px;
+	height: 400px;
+	background: #E5E5E5;
+}
+
+#newsHead {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	text-align: center;
+	width: 100%;
+	border-bottom: 1px solid #8F8F8F;
+}
+
+#newsBody {
+	position: absolute;
+	left: 0px;
+	top: 18px;
+	margin-left: 2px;
+	margin-right: 2px;
+	width: 99.3%;
+	max-width: 100%;
+	max-height: 383px;
+	overflow: auto;
+	text-align:justify;
+}
+
+#newsBody::-webkit-scrollbar {
+	width: 10px;
+}
+
+#shop {
+	position: absolute;
+	right: 10px;
+	top: 48px;
+	width: 400px;
+	height: 400px;
+	background: #E5E5E5;
+}
+
+#sell {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 199px;
+	height: 100%;
+	border-right: 1px solid #8F8F8F;
+}
+
+#buy {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 200px;
+	height: 100%;
+	
+}
+
+#inputSell {
+	position: absolute;
+	left: 8px;
+	top: 28px;
+	width: 28px;
+	font-family: monospace;
+	background: #E5E5E5;
+}
+
+#inputSell:focus {
+	outline-width: 0px;
+}
+
+#inputSellSymbol {
+	position: absolute;
+	left: 40px;
+	top: 30px;
+}
+
+#inputSellLable {
+	position: absolute;
+	left: 8px;
+	top: 8px;
+}
+
+#inputSellItem{
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	width: 40px;
+	height: 40px;
+	border: 2px inset;
+	font-size: 20px;
+	font-family: monospace;
+	cursor: pointer;
+}
+
+#inputSellItemText{
+	text-align:center;
+	width: 22px;
+	height: 23px;
+	position: absolute;
+	left: 8px;
+	top: 8px;
+	
+}
+
+#sellAmountText {
+	position: absolute;
+	left: 8px;
+	top: 54px;
+}
+
+#periodic {
+	width: 650px;
+	position: absolute;
+	left: 75px;
+	top: 294.5px;
+	background: #E5E5E5;
+}
+
+
+
+
+/*
+*Animation stuff.
+*/
+
+@-webkit-keyframes fadein {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+@keyframes fadein {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+@keyframes fadeout {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+/*
+*Global stuff
+*/
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+td {
+	width: 20px;
+	height: 18px;
+	margin: 1px;
+	border: 1px solid #000;
+	cursor: pointer;
+}
+
+.empty{
+	border: 0px solid #000;
+	cursor: default;
+}

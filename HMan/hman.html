@@ -1,0 +1,201 @@
+<html>
+	<head>
+		<title>This Is A Test</title>
+		<link href="style.css" rel="stylesheet" type="text/css">
+	</head>
+	<body onload="startUp()" onunload="pushSave()">
+		<div id="topbar">
+			<div id="cashbalance">$0.00</div>
+			<div id="currentElement" onclick="openScreen(3)">Hydrogen: 0</div>
+		</div>
+		<div id="main">
+			<div id="background">
+				<div id="hydrogenTank">
+					<div id="hydrogenText">This is the x</div>
+					<div id="hydrogenBar"></div>
+				</div>
+				<div id="shop">
+					<div id="sell">
+						<div id="inputSellLable">Sell Amount</div>
+						<input type="number" id="inputSell" onblur="fixMaxMin()"></input>
+						<div id="inputSellSymbol">%</div>
+						<div id="inputSellItem" onclick="setValueSellItem()"><div id="inputSellItemText"></div></div>
+						<div id="sellAmountText">Amount to sell: 10mol</div>
+					</div>
+					<div id="buy"></div>
+				</div>
+				<div id="news">
+					<div id="newsHead">Log</div>
+					<div id="newsBody"></div>
+				</div>
+				
+				
+				<div id="buttonInventory" class="ibutton" onclick="openScreen(0)"></div>
+				<div id="buttonSettings" class="ibutton" onclick="openScreen(1)"></div>
+				<div id="buttonAchievements" class="ibutton" onclick="openScreen(2)"></div>
+			</div>
+			<div id="inventory" >
+				
+				<div id="buttonInventoryClose" class="ibutton" onclick="closeScreen(0)"> </div>
+			</div>
+			<div id="settings" >
+				
+				<div id="buttonSettingsClose" class="ibutton" onclick="closeScreen(1)"> </div>
+			</div>
+			<div id="achievements" >
+				
+				<div id="buttonAchievementsClose" class="ibutton" onclick="closeScreen(2)"> </div>
+			</div>
+			<div id="table">
+				<table id="periodic">
+					<tr id="p1">
+						<td id="H" title="Hydrogen" onclick="activateElement(1)">H</td>
+						<td class="empty" colspan="16"></td>
+						<td id="He" title="Helium" onclick="activateElement(2)">He</td>
+					</tr>
+					<tr id="p2">
+						<td id="Li" title="Lithium" onclick="activateElement(3)">Li</td>
+						<td id="Be" title="Beryllium" onclick="activateElement(4)">Be</td>
+						<td class="empty" id="desc" colspan="10" rowspan="2"></td>
+						<td id="B" title="Boron" onclick="activateElement(5)">B</td>
+						<td id="C" title="Carbon" onclick="activateElement(6)">C</td>
+						<td id="N" title="Nitrogen" onclick="activateElement(7)">N</td>
+						<td id="O" title="Oxygen" onclick="activateElement(8)">O</td>
+						<td id="F" title="Fluorine" onclick="activateElement(9)">F</td>
+						<td id="Ne" title="Neon" onclick="activateElement(10)">Ne</td>
+					</tr>
+					<tr id="p3">
+						<td id="Na" title="Sodium" onclick="activateElement(11)">Na</td>
+						<td id="Mg" title="Magnesium" onclick="activateElement(12)">Mg</td>
+						<td id="Al" title="Aluminium" onclick="activateElement(13)">Al</td>
+						<td id="Si" title="Silicon" onclick="activateElement(14)">Si</td>
+						<td id="P"  title="Phosphorus" onclick="activateElement(15)">P</td>
+						<td id="S"  title="Sulfur" onclick="activateElement(16)">S</td>
+						<td id="Cl" title="Chlorine" onclick="activateElement(17)">Cl</td>
+						<td id="Ar" title="Argon" onclick="activateElement(18)">Ar</td>
+					</tr>
+					<tr id="p4">
+						<td id="K"  title="Potassium" onclick="activateElement(19)">K</td>
+						<td id="Ca" title="Calcium" onclick="activateElement(20)">Ca</td>
+						<td id="Sc" title="Scandium" onclick="activateElement(21)">Sc</td>
+						<td id="Ti" title="Titanium" onclick="activateElement(22)">Ti</td>
+						<td id="V"  title="Vanadium" onclick="activateElement(23)">V</td>
+						<td id="Cr" title="Chromium" onclick="activateElement(24)">Cr</td>
+						<td id="Mn" title="Manganese" onclick="activateElement(25)">Mn</td>
+						<td id="Fe" title="Iron" onclick="activateElement(26)">Fe</td>
+						<td id="Co" title="Cobalt" onclick="activateElement(27)">Co</td>
+						<td id="Ni" title="Nickel" onclick="activateElement(28)">Ni</td>
+						<td id="Cu" title="Copper" onclick="activateElement(29)">Cu</td>
+						<td id="Zn" title="Zinc" onclick="activateElement(30)">Zn</td>
+						<td id="Ga" title="Gallium" onclick="activateElement(31)">Ga</td>
+						<td id="Ge" title="Germanium" onclick="activateElement(32)">Ge</td>
+						<td id="As" title="Arsenic" onclick="activateElement(33)">As</td>
+						<td id="Se" title="Selenium" onclick="activateElement(34)">Se</td>
+						<td id="Br" title="Bromine" onclick="activateElement(35)">Br</td>
+						<td id="Kr" title="Krypton" onclick="activateElement(36)">Kr</td>
+					</tr>
+					<tr id="p5">
+						<td id="Rb" title="Rubidium" onclick="activateElement(37)">Rb</td>
+						<td id="Sr" title="Strontium" onclick="activateElement(38)">Sr</td>
+						<td id="Y"  title="Yttrium" onclick="activateElement(39)">Y</td>
+						<td id="Zr" title="Zirconium" onclick="activateElement(40)">Zr</td>
+						<td id="Nb" title="Niobium" onclick="activateElement(41)">Nb</td>
+						<td id="Mo" title="Molybdenum" onclick="activateElement(42)">Mo</td>
+						<td id="Tc" title="Technetium" onclick="activateElement(43)">Tc</td>
+						<td id="Ru" title="Ruthenium" onclick="activateElement(44)">Ru</td>
+						<td id="Rh" title="Rhodium" onclick="activateElement(45)">Rh</td>
+						<td id="Pd" title="Palladium" onclick="activateElement(46)">Pd</td>
+						<td id="Ag" title="Silver" onclick="activateElement(47)">Ag</td>
+						<td id="Cd" title="Cadmium" onclick="activateElement(48)">Cd</td>
+						<td id="In" title="Indium" onclick="activateElement(49)">In</td>
+						<td id="Sn" title="Tin" onclick="activateElement(50)">Sn</td>
+						<td id="Sb" title="Antimony" onclick="activateElement(51)">Sb</td>
+						<td id="Te" title="Tellurium" onclick="activateElement(52)">Te</td>
+						<td id="I"  title="Iodine" onclick="activateElement(53)">I</td>
+						<td id="Xe" title="Xenon" onclick="activateElement(54)">Xe</td>
+					</tr>
+					<tr id="p6">
+						<td id="Cs" title="Caesium" onclick="activateElement(55)">Cs</td>
+						<td id="Ba" title="Barium" onclick="activateElement(56)">Ba</td>
+						<td class="empty"></td>
+						<td id="Hf" title="Hafnium" onclick="activateElement(72)">Hf</td>
+						<td id="Ta" title="Tantalum" onclick="activateElement(73)">Ta</td>
+						<td id="W"  title="Tungsten" onclick="activateElement(74)">W</td>
+						<td id="Re" title="Rhenium" onclick="activateElement(75)">Re</td>
+						<td id="Os" title="Osmium" onclick="activateElement(76)">Os</td>
+						<td id="Ir" title="Iridium" onclick="activateElement(77)">Ir</td>
+						<td id="Pt" title="Platinum" onclick="activateElement(78)">Pt</td>
+						<td id="Au" title="Gold" onclick="activateElement(79)">Au</td>
+						<td id="Hg" title="Mercury" onclick="activateElement(80)">Hg</td>
+						<td id="Tl" title="Thallium" onclick="activateElement(81)">Tl</td>
+						<td id="Pb" title="Lead" onclick="activateElement(82)">Pb</td>
+						<td id="Bi" title="Bismuth" onclick="activateElement(83)">Bi</td>
+						<td id="Po" title="Polonium" onclick="activateElement(84)">Po</td>
+						<td id="At" title="Astatine" onclick="activateElement(85)">At</td>
+						<td id="Rn" title="Radon" onclick="activateElement(86)">Rn</td>
+					</tr>
+					<tr id="p7">
+						<td id="Fr" title="Francium" onclick="activateElement(87)">Fr</td>
+						<td id="Ra" title="Radium" onclick="activateElement(88)">Ra</td>
+						<td class="empty"></td>
+						<td id="Rf" title="Rutherfordium" onclick="activateElement(104)">Rf</td>
+						<td id="Db" title="Dubnium" onclick="activateElement(105)">Db</td>
+						<td id="Sg" title="Seaborgium" onclick="activateElement(106)">Sg</td>
+						<td id="Bh" title="Bohrium" onclick="activateElement(107)">Bh</td>
+						<td id="Hs" title="Hassium" onclick="activateElement(108)">Hs</td>
+						<td id="Mt" title="Meitnerium" onclick="activateElement(109)">Mt</td>
+						<td id="Ds" title="Darmstadtium" onclick="activateElement(110)">Ds</td>
+						<td id="Rg" title="Roentgenium" onclick="activateElement(111)">Rg</td>
+						<td id="Cn" title="Copernicium" onclick="activateElement(112)">Cn</td>
+						<td id="Nh" title="Nihonium" onclick="activateElement(113)">Nh</td>
+						<td id="Fl" title="Flerovium" onclick="activateElement(114)">Fl</td>
+						<td id="Mc" title="Moscovium" onclick="activateElement(115)">Mc</td>
+						<td id="Lv" title="Livermorium" onclick="activateElement(116)">Lv</td>
+						<td id="Ts" title="Tennessine" onclick="activateElement(117)">Ts</td>
+						<td id="Og" title="Oganesson" onclick="activateElement(118)">Og</td>
+					</tr>
+					<tr class="spacer"><td class="empty" colspan=18></td></tr>
+					<tr>
+						<td class="empty" colspan="2"></td>
+						<td id="La" title="Lanthanum" onclick="activateElement(57)">La</td>
+						<td id="Ce" title="Cerium" onclick="activateElement(58)">Ce</td>
+						<td id="Pr" title="Praseodymium" onclick="activateElement(59)">Pr</td>
+						<td id="Nd" title="Neodymium" onclick="activateElement(60)">Nd</td>
+						<td id="Pm" title="Promethium" onclick="activateElement(61)">Pm</td>
+						<td id="Sm" title="Samarium" onclick="activateElement(62)">Sm</td>
+						<td id="Eu" title="Europium" onclick="activateElement(63)">Eu</td>
+						<td id="Gd" title="Gadolinium" onclick="activateElement(64)">Gd</td>
+						<td id="Tb" title="Terbium" onclick="activateElement(65)">Tb</td>
+						<td id="Dy" title="Dysprosium" onclick="activateElement(66)">Dy</td>
+						<td id="Ho" title="Holmium" onclick="activateElement(67)">Ho</td>
+						<td id="Er" title="Erbium" onclick="activateElement(68)">Er</td>
+						<td id="Tm" title="Thulium" onclick="activateElement(69)">Tm</td>
+						<td id="Yb" title="Ytterbium" onclick="activateElement(70)">Yb</td>
+						<td id="Lu" title="Lutetium" onclick="activateElement(71)">Lu</td>
+						<td class="empty"></td>
+					</tr>
+					<tr>
+						<td class="empty" colspan="2"></td>
+						<td id="Ac" title="Actinium" onclick="activateElement(89)">Ac</td>
+						<td id="Th" title="Thorium" onclick="activateElement(90)">Th</td>
+						<td id="Pa" title="Protactinium" onclick="activateElement(91)">Pa</td>
+						<td id="U"  title="Uranium" onclick="activateElement(92)">U</td>
+						<td id="Np" title="Neptunium" onclick="activateElement(93)">Np</td>
+						<td id="Pu" title="Plutonium" onclick="activateElement(94)">Pu</td>
+						<td id="Am" title="Americium" onclick="activateElement(95)">Am</td>
+						<td id="Cm" title="Curium" onclick="activateElement(96)">Cm</td>
+						<td id="Bk" title="Berkelium" onclick="activateElement(97)">Bk</td>
+						<td id="Cf" title="Californium" onclick="activateElement(98)">Cf</td>
+						<td id="Es" title="Einsteinium" onclick="activateElement(99)">Es</td>
+						<td id="Fm" title="Fermium" onclick="activateElement(100)">Fm</td>
+						<td id="Md" title="Mendelevium" onclick="activateElement(101)">Md</td>
+						<td id="No" title="Nobelium" onclick="activateElement(102)">No</td>
+						<td id="Lr" title="Lawrencium" onclick="activateElement(103)">Lr</td>
+						<td class="empty"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="hman.js"></script>
+</html>
