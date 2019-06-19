@@ -100,7 +100,7 @@ function startup(){
 
 function pullSave(){
 	if (typeof(Storage) !== "undefined") {
-		let save = localStorage.getItem("save")
+		let save = localStorage.getItem("TIAG@")
 		if (save) game = JSON.parse(save);
 		
 		console.log("Pulled data from save.");
@@ -110,7 +110,7 @@ function pullSave(){
 }
 
 function pushSave(){
-	localStorage.setItem("save", JSON.stringify(game))
+	localStorage.setItem("TIAG@", JSON.stringify(game))
 }
 
 function clearSave(){
