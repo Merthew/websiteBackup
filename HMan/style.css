@@ -23,7 +23,7 @@ body {
 }
 
 #cashbalance {
-	width: 200px;
+	width: 300px;
 	background-color: #CFCFCF;
 	height: 100%;
 	border-right: 1px solid #8F8F8F;
@@ -33,7 +33,7 @@ body {
 	position: absolute;
 	right: 0px;
 	top: 0px;
-	width: 200px;
+	width: 300px;
 	height: 100%;
 	text-align: center;
 	background-color: #CFCFCF;
@@ -49,18 +49,11 @@ body {
 	top: 19px;
 }
 
-.ibutton{
-	border-radius: 50%;
-	width: 16px;
-	height: 16px;
-	border: 1px solid #000;
-}
-
 #buttonInventory {
 	display: block;
 	position: absolute;
 	right: 1px;
-	bottom: 1px;
+	bottom: 41px;
 	background-image: url("images/ico/bag.png");
 	cursor: pointer;
 }
@@ -69,7 +62,7 @@ body {
 	display: block;
 	position: absolute;
 	right: 1px;
-	bottom: 21px;
+	bottom: 1px;
 	background-image: url("images/ico/gear.png");
 	cursor: pointer;
 }
@@ -77,7 +70,7 @@ body {
 #buttonAchievements {
 	position: absolute;
 	right: 1px;
-	bottom: 41px;
+	bottom: 21px;
 	background-image: url("images/ico/cup.png");
 	cursor: pointer;
 }
@@ -159,7 +152,7 @@ body {
 	display: block;
 	position: absolute;
 	right: 1px;
-	bottom: 1px;
+	bottom: 41px;
 	background-image: url("images/ico/bag.png");
 	cursor: pointer;
 }
@@ -168,7 +161,7 @@ body {
 	display: block;
 	position: absolute;
 	right: 1px;
-	bottom: 21px;
+	bottom: 1px;
 	background-image: url("images/ico/gear.png");
 	cursor: pointer;
 }
@@ -176,7 +169,7 @@ body {
 #buttonAchievementsClose {
 	position: absolute;
 	right: 1px;
-	bottom: 41px;
+	bottom: 21px;
 	background-image: url("images/ico/cup.png");
 	cursor: pointer;
 }
@@ -321,6 +314,33 @@ body {
 	top: 54px;
 }
 
+#sellCurrentPrice{
+	position: absolute;
+	left: 8px;
+	top: 88px;
+}
+
+#buttonMakeSale{
+	position: absolute;
+	left: 8px;
+	top: 176px;
+	border: outset;
+	cursor: pointer;
+}
+
+#autoSellText{
+	position: absolute;
+	left: 8px;
+	bottom: 28px;
+}
+
+#autoSellCheck{
+	position: absolute;
+	left: 90px;
+	bottom: 28px;
+}
+
+
 #periodic {
 	width: 650px;
 	position: absolute;
@@ -330,6 +350,19 @@ body {
 }
 
 
+/*
+*Settings page.
+*/
+#buttonClearSave {
+	position: absolute;
+	left: 8px;
+	bottom: 8px;
+	border: outset;
+	padding: 4px;
+	cursor: pointer;
+	background: rgb(255, 0, 0 , .3);
+	
+}
 
 
 /*
@@ -359,6 +392,13 @@ body {
 /*
 *Global stuff
 */
+
+.ibutton{
+	border-radius: 50%;
+	width: 16px;
+	height: 16px;
+	border: 1px solid #000;
+}
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 

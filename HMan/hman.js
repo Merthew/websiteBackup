@@ -44,6 +44,10 @@ function getShortenedNum(num){
 	return temp + " " + suffixes[Math.floor(Math.log10(num) / 3)]
 }
 
+function capitalize(str){
+	return (str[0].toUpperCase() + str.substr(1).toLowerCase());
+}
+
 //=================================================================================================================================================================\\
 //Save data stuff.
 
@@ -175,9 +179,250 @@ var hman = {
 		oganesson: 0,
 	},
 	
+	prices: {
+		hydrogen: 0.5,
+		helium: 1,
+		lithium: 0,
+		beryllium: 0,
+		boron: 0,
+		carbon: 0,
+		nitrogen: 0,
+		oxygen: 0,
+		fluorine: 0,
+		neon: 0,
+		sodium: 0,
+		magnesium: 0,
+		aluminum: 0,
+		silicon: 0,
+		phosphorus: 0,
+		sulfur: 0,
+		chlorine: 0,
+		argon: 0,
+		potassium: 0,
+		calcium: 0,
+		scandium: 0,
+		titanium: 0,
+		vanadium: 0,
+		chromium: 0,
+		manganese: 0,
+		iron: 0,
+		cobalt: 0,
+		nickel: 0,
+		copper: 0,
+		zinc: 0,
+		gallium: 0,
+		germaium: 0,
+		arsenic: 0,
+		selenium: 0,
+		bromine: 0,
+		krypton: 0,
+		rubidium: 0,
+		strontium: 0,
+		yttrium: 0,
+		zirconium: 0,
+		niobium: 0,
+		molybdenum: 0,
+		technetium: 0,
+		ruthenium: 0,
+		rhodium: 0,
+		palladium: 0,
+		silver: 0,
+		cadmium: 0,
+		indium: 0,
+		tin: 0,
+		antimony: 0,
+		tellurium: 0,
+		iodine: 0,
+		xenon: 0,
+		cesium: 0,
+		barium: 0,
+		lanthanum: 0,
+		cerium: 0,
+		praseodymium: 0,
+		neodymium: 0,
+		promethium: 0,
+		samarium: 0,
+		europium: 0,
+		gadolinium: 0,
+		terbium: 0,
+		dysprosium: 0,
+		holmium: 0,
+		erbium: 0,
+		thulium: 0,
+		ytterbium: 0,
+		lutetium: 0,
+		hafnium: 0,
+		tantalum: 0,
+		tungsten: 0,
+		rhenium: 0,
+		osmium: 0,
+		iridium: 0,
+		platinum: 0,
+		gold: 0,
+		mercury: 0,
+		thallium: 0,
+		lead: 0,
+		bismuth: 0,
+		polonium: 0,
+		astatine: 0,
+		radon: 0,
+		francium: 0,
+		radium: 0,
+		actinium: 0,
+		thorium: 0,
+		protactinium: 0,
+		uranium: 0,
+		neptunium: 0,
+		plutonium: 0,
+		americium: 0,
+		curium: 0,
+		berkelium: 0,
+		californium: 0,
+		einsteinium: 0,
+		fermium: 0,
+		mendelevium: 0,
+		nobelium: 0,
+		lawrencium: 0,
+		rutherfodium: 0,
+		dubnium: 0,
+		seaborgium: 0,
+		bohrim: 0,
+		hassium: 0,
+		meitnerium: 0,
+		darmstadtium: 0,
+		roentgenium: 0,
+		copernicium: 0,
+		nihonium: 0,
+		flerovium: 0,
+		moscovium: 0,
+		livermorium: 0,
+		tennessine: 0,
+		oganesson: 0,
+	},
+	
+	caps: {
+		hydrogen: 1000,
+		helium: 1000,
+		lithium: 1000,
+		beryllium: 1000,
+		boron: 1000,
+		carbon: 1000,
+		nitrogen: 1000,
+		oxygen: 1000,
+		fluorine: 1000,
+		neon: 1000,
+		sodium: 1000,
+		magnesium: 1000,
+		aluminum: 1000,
+		silicon: 1000,
+		phosphorus: 1000,
+		sulfur: 1000,
+		chlorine: 1000,
+		argon: 1000,
+		potassium: 1000,
+		calcium: 1000,
+		scandium: 1000,
+		titanium: 1000,
+		vanadium: 1000,
+		chromium: 1000,
+		manganese: 1000,
+		iron: 1000,
+		cobalt: 1000,
+		nickel: 1000,
+		copper: 1000,
+		zinc: 1000,
+		gallium: 1000,
+		germaium: 1000,
+		arsenic: 1000,
+		selenium: 1000,
+		bromine: 1000,
+		krypton: 1000,
+		rubidium: 1000,
+		strontium: 1000,
+		yttrium: 1000,
+		zirconium: 1000,
+		niobium: 1000,
+		molybdenum: 1000,
+		technetium: 1000,
+		ruthenium: 1000,
+		rhodium: 1000,
+		palladium: 1000,
+		silver: 1000,
+		cadmium: 1000,
+		indium: 1000,
+		tin: 1000,
+		antimony: 1000,
+		tellurium: 1000,
+		iodine: 1000,
+		xenon: 1000,
+		cesium: 1000,
+		barium: 1000,
+		lanthanum: 1000,
+		cerium: 1000,
+		praseodymium: 1000,
+		neodymium: 1000,
+		promethium: 1000,
+		samarium: 1000,
+		europium: 1000,
+		gadolinium: 1000,
+		terbium: 1000,
+		dysprosium: 1000,
+		holmium: 1000,
+		erbium: 1000,
+		thulium: 1000,
+		ytterbium: 1000,
+		lutetium: 1000,
+		hafnium: 1000,
+		tantalum: 1000,
+		tungsten: 1000,
+		rhenium: 1000,
+		osmium: 1000,
+		iridium: 1000,
+		platinum: 1000,
+		gold: 1000,
+		mercury: 1000,
+		thallium: 1000,
+		lead: 1000,
+		bismuth: 1000,
+		polonium: 1000,
+		astatine: 1000,
+		radon: 1000,
+		francium: 1000,
+		radium: 1000,
+		actinium: 1000,
+		thorium: 1000,
+		protactinium: 1000,
+		uranium: 1000,
+		neptunium: 1000,
+		plutonium: 1000,
+		americium: 1000,
+		curium: 1000,
+		berkelium: 1000,
+		californium: 1000,
+		einsteinium: 1000,
+		fermium: 1000,
+		mendelevium: 1000,
+		nobelium: 1000,
+		lawrencium: 1000,
+		rutherfodium: 1000,
+		dubnium: 1000,
+		seaborgium: 1000,
+		bohrim: 1000,
+		hassium: 1000,
+		meitnerium: 1000,
+		darmstadtium: 1000,
+		roentgenium: 1000,
+		copernicium: 1000,
+		nihonium: 1000,
+		flerovium: 1000,
+		moscovium: 1000,
+		livermorium: 1000,
+		tennessine: 1000,
+		oganesson: 1000,
+	},
+	
 	hydrogenRate: 1000,
 	hydrogenAmount: 1,
-	hydrogenCap: 1000,
 }
 
 
@@ -189,6 +434,7 @@ const defaultHman = hman;
 function startUp() {
 	pullSave();
 	document.getElementById("inputSell").value = 100;
+	
 }
 
 /**
@@ -222,6 +468,7 @@ function clearSave(){
 		pushSave();
 		location.reload();
 	}
+	
 }
 
 //=================================================================================================================================================================\\
@@ -240,11 +487,12 @@ setInterval(() => {
 var frame = 0;
 setInterval(() => {
 	document.getElementById("cashbalance").innerHTML = "$" + getShortenedCash(hman.cash);
-	document.getElementById("hydrogenText").innerHTML = "Hydrogen: " + hman.inventory.hydrogen + "/" + hman.hydrogenCap + " mol";
+	document.getElementById("hydrogenText").innerHTML = "Hydrogen: " + getShortenedNum(hman.inventory.hydrogen) + "/" + getShortenedNum(hman.caps.hydrogen) + " mol";
 	drawTank();
 	newsUpdate();
 	currentElementUpdate();
 	sellUpdate();
+	autoSell();
 	
 	if(frame >= 30){
 		frame = 0;
@@ -257,7 +505,8 @@ setInterval(() => {
 *Dynamic interval used in this case for the hydrogen collection.
 */
 setInterval(() => {
-	hman.inventory.hydrogen = Math.min((hman.inventory.hydrogen += hman.hydrogenAmount), hman.hydrogenCap);
+	hman.inventory.hydrogen = Math.min((hman.inventory.hydrogen += hman.hydrogenAmount), hman.caps.hydrogen);
+	
 }, hman.hydrogenRate);
 
 //=================================================================================================================================================================\\
@@ -279,6 +528,10 @@ function openScreen(num) {
 		break;
 	case 3:
 		var x = document.getElementById("table");
+		if(x.className === 'show'){
+			closeScreen(3);
+			break;
+		}
 		x.className = "show";
 		break;
 	}
@@ -306,7 +559,7 @@ function closeScreen(num) {
 }
 
 function drawTank(){
-	var width = (hman.inventory.hydrogen / hman.hydrogenCap * 100);
+	var width = (hman.inventory.hydrogen / hman.caps.hydrogen * 100);
 	document.getElementById("hydrogenBar").style.width = width + "%";
 }
 
@@ -330,24 +583,69 @@ function currentElementUpdate(){
 	var invKey = Object.keys(hman.inventory);
 	var invNum = Object.values(hman.inventory);
 	
-	document.getElementById("currentElement").innerHTML = invKey[hman.currentElement] + ": " + invNum[hman.currentElement];
-	
-	
+	document.getElementById("currentElement").innerHTML = capitalize(invKey[hman.currentElement]) + ": " + getShortenedNum(invNum[hman.currentElement]) + " mol";
 }
 
 function sellUpdate(){
 	var invKey = Object.keys(hman.inventory);
-	var invNum = Object.values(hman.inventory);	
+	var invNum = Object.values(hman.inventory);
+	var invPri = Object.values(hman.prices);
+	var invCap = Object.values(hman.caps);
 	
 	document.getElementById("inputSellItemText").innerHTML = shorts[hman.sellElement];
 	document.getElementById("inputSellItem").title = invKey[hman.sellElement];
 	
-	var per = document.getElementById("inputSell").value;
-	document.getElementById("sellAmountText").innerHTML = "Amount to sell: <br>" + Math.trunc((per/100) * invNum[hman.sellElement]) + "mol";
+	var per = document.getElementById("inputSell").value/100;
+	var sellAmount = 0;
+	if(document.getElementById("autoSellCheck").checked){
+		sellAmount = Math.trunc(per * invCap[hman.sellElement]);
+		document.getElementById("sellAmountText").innerHTML = "<b>Amount to sell:</b> <br>" + getShortenedNum(sellAmount) + " mol";
+	}
+	else{
+		sellAmount = Math.trunc(per * invNum[hman.sellElement]);
+		document.getElementById("sellAmountText").innerHTML = "<b>Amount to sell:</b> <br>" + getShortenedNum(sellAmount) + " mol";
+	}
+	document.getElementById("sellCurrentPrice").innerHTML = "<b>Current Price:</b> <br>$" + getShortenedCash(invPri[hman.sellElement]) + "<br><b>Sale Amount:</b> <br>$" + getShortenedCash(invPri[hman.sellElement] * sellAmount);
 }
 
 function setValueSellItem() {
 	hman.sellElement = hman.currentElement;
+}
+
+function makeSale() {
+	var invKey = Object.keys(hman.inventory);
+	var invNum = Object.values(hman.inventory);
+	var invPri = Object.values(hman.prices);
+	var invCap = Object.values(hman.caps);
+	
+	var per = document.getElementById("inputSell").value;
+	var sellAmount = Math.trunc((per/100) * invNum[hman.sellElement]);
+	
+	var price = invPri[hman.sellElement] * sellAmount;
+	
+	hman.cash += price;
+	hman.inventory[invKey[hman.sellElement]] -= sellAmount;
+	
+}
+
+function autoSell() {
+	if(document.getElementById("autoSellCheck").checked){
+		
+		var invKey = Object.keys(hman.inventory);
+		var invNum = Object.values(hman.inventory);
+		var invPri = Object.values(hman.prices);
+		var invCap = Object.values(hman.caps);
+		
+		var temp = document.getElementById("inputSell").value / 100;
+		if(invNum[hman.sellElement] >= (temp * invCap[hman.sellElement])){
+			var sellAmount = invNum[hman.sellElement];
+	
+			var price = invPri[hman.sellElement] * sellAmount;
+	
+			hman.cash += price;
+			hman.inventory[invKey[hman.sellElement]] -= sellAmount;
+		}
+	}
 }
 
 function newsUpdate() {
@@ -395,7 +693,7 @@ function newsUpdate() {
 	}
 	
 	document.getElementById("newsBody").innerHTML = out;
-	
+	//document.getElementById("newsBody").scrollTop = document.getElementById("newsBody").scrollHeight;
 }
 
 

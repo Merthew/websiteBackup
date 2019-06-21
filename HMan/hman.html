@@ -20,7 +20,11 @@
 						<input type="number" id="inputSell" onblur="fixMaxMin()"></input>
 						<div id="inputSellSymbol">%</div>
 						<div id="inputSellItem" onclick="setValueSellItem()"><div id="inputSellItemText"></div></div>
-						<div id="sellAmountText">Amount to sell: 10mol</div>
+						<div id="sellAmountText"><b>Amount to sell:</b> 10mol</div>
+						<div id="sellCurrentPrice"><b>Current Price:</b> <br>$price<br><b>Sale Amount:</b> <br>$price</div>
+						<div id="autoSellText"><b>Auto Sell:</b></div>
+						<input type="checkbox" id="autoSellCheck"></input>
+						<div id="buttonMakeSale" onclick="makeSale()">Sell</div>
 					</div>
 					<div id="buy"></div>
 				</div>
@@ -39,7 +43,7 @@
 				<div id="buttonInventoryClose" class="ibutton" onclick="closeScreen(0)"> </div>
 			</div>
 			<div id="settings" >
-				
+				<div id="buttonClearSave" onclick="clearSave()">Wipe Save</div>
 				<div id="buttonSettingsClose" class="ibutton" onclick="closeScreen(1)"> </div>
 			</div>
 			<div id="achievements" >
