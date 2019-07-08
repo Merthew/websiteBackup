@@ -51,12 +51,18 @@ function capitalize(str){
 //=================================================================================================================================================================\\
 //Save data stuff.
 
-var hman = {
+var game = {
 	cash: 0,
 	logIndex: 0,
 	gameTime: 0,
 	currentElement: 0,
 	sellElement: 0,
+	hydrogenRate: 200,
+	hydrogenAmount: 1,
+	accelerator1Item1: 0,
+	accelerator1Item2: 0,
+	accelerator2Item1: 0,
+	accelerator2Item2: 0,
 	
 	inventory: {
 		hydrogen: 0,
@@ -421,12 +427,19 @@ var hman = {
 		oganesson: 1000,
 	},
 	
-	hydrogenRate: 1000,
-	hydrogenAmount: 1,
+	upgrades: {
+		hydrogenCap: 0,
+		hydrogenSpeed: 0,
+		hydrogenAmount: 0,
+		hydrogenPrice: 0,
+		
+	},
+	
+	
 }
 
 
-const defaultHman = hman;
+const defaultHman = game;
 
 /**
 *Called onload for the body element.
@@ -434,28 +447,29 @@ const defaultHman = hman;
 function startUp() {
 	pullSave();
 	document.getElementById("inputSell").value = 100;
-	
+	createUpgrades();
 }
 
 /**
-*Pulls the data from the localData save and parses it into the game object(hman).
+*Pulls the data from the localData save and parses it into the game object(game).
 */
 function pullSave(){
 	if (typeof(Storage) !== "undefined") {
 		let save = localStorage.getItem("hman")
-		if (save) hman = JSON.parse(save);
+		if (save) game = JSON.parse(save);
 		
-		console.log("Pulled data from save.");
+		console.log("Loaded Save");
+		console.log("Hello there. -Game Dev");
 	} else {
 		window.alert("This browser does not support save data.");
 	}
 }
 
 /**
-*Saves current data in the game object(hman) to the localData storage.
+*Saves current data in the game object(game) to the localData storage.
 */
 function pushSave(){
-	localStorage.setItem("hman", JSON.stringify(hman))
+	localStorage.setItem("hman", JSON.stringify(game))
 	console.log("Saved Game");
 }
 
@@ -464,7 +478,7 @@ function pushSave(){
 */
 function clearSave(){
 	if(confirm("Are you sure?")){
-		hman = defaultHman;
+		game = defaultHman;
 		pushSave();
 		location.reload();
 	}
@@ -486,17 +500,20 @@ setInterval(() => {
 */
 var frame = 0;
 setInterval(() => {
-	document.getElementById("cashbalance").innerHTML = "$" + getShortenedCash(hman.cash);
-	document.getElementById("hydrogenText").innerHTML = "Hydrogen: " + getShortenedNum(hman.inventory.hydrogen) + "/" + getShortenedNum(hman.caps.hydrogen) + " mol";
+	document.getElementById("cashbalance").innerHTML = "$" + getShortenedCash(game.cash);
+	document.getElementById("hydrogenText").innerHTML = "Hydrogen: " + getShortenedNum(game.inventory.hydrogen) + "/" + getShortenedNum(game.caps.hydrogen) + " mol";
 	drawTank();
 	newsUpdate();
 	currentElementUpdate();
 	sellUpdate();
 	autoSell();
+	applyUpgrades();
+	accelerator1Update();
+	accelerator2Update();
 	
 	if(frame >= 30){
 		frame = 0;
-		hman.gameTime += 1;
+		game.gameTime += 1;
 	}
 	frame ++;
 }, 1000/30);
@@ -504,10 +521,15 @@ setInterval(() => {
 /**
 *Dynamic interval used in this case for the hydrogen collection.
 */
+var step = 0;
 setInterval(() => {
-	hman.inventory.hydrogen = Math.min((hman.inventory.hydrogen += hman.hydrogenAmount), hman.caps.hydrogen);
+	if(step >= game.hydrogenRate){
+		game.inventory.hydrogen = Math.min((game.inventory.hydrogen += game.hydrogenAmount), game.caps.hydrogen);
+		step = 0;
+	}
 	
-}, hman.hydrogenRate);
+	step ++;
+}, 1);
 
 //=================================================================================================================================================================\\
 //Misc
@@ -559,7 +581,7 @@ function closeScreen(num) {
 }
 
 function drawTank(){
-	var width = (hman.inventory.hydrogen / hman.caps.hydrogen * 100);
+	var width = (game.inventory.hydrogen / game.caps.hydrogen * 100);
 	document.getElementById("hydrogenBar").style.width = width + "%";
 }
 
@@ -575,102 +597,148 @@ function fixMaxMin() {
 }
 
 function activateElement(num) {
-	hman.currentElement = num-1;
+	game.currentElement = num-1;
 	closeScreen(3);
 }
 
 function currentElementUpdate(){
-	var invKey = Object.keys(hman.inventory);
-	var invNum = Object.values(hman.inventory);
+	var invKey = Object.keys(game.inventory);
+	var invNum = Object.values(game.inventory);
 	
-	document.getElementById("currentElement").innerHTML = capitalize(invKey[hman.currentElement]) + ": " + getShortenedNum(invNum[hman.currentElement]) + " mol";
+	document.getElementById("currentElement").innerHTML = capitalize(invKey[game.currentElement]) + ": " + getShortenedNum(invNum[game.currentElement]) + " mol";
 }
 
 function sellUpdate(){
-	var invKey = Object.keys(hman.inventory);
-	var invNum = Object.values(hman.inventory);
-	var invPri = Object.values(hman.prices);
-	var invCap = Object.values(hman.caps);
+	var invKey = Object.keys(game.inventory);
+	var invNum = Object.values(game.inventory);
+	var invPri = Object.values(game.prices);
+	var invCap = Object.values(game.caps);
 	
-	document.getElementById("inputSellItemText").innerHTML = shorts[hman.sellElement];
-	document.getElementById("inputSellItem").title = invKey[hman.sellElement];
+	document.getElementById("inputSellItemText").innerHTML = shorts[game.sellElement];
+	document.getElementById("inputSellItem").title = invKey[game.sellElement];
 	
 	var per = document.getElementById("inputSell").value/100;
 	var sellAmount = 0;
 	if(document.getElementById("autoSellCheck").checked){
-		sellAmount = Math.trunc(per * invCap[hman.sellElement]);
+		sellAmount = Math.trunc(per * invCap[game.sellElement]);
 		document.getElementById("sellAmountText").innerHTML = "<b>Amount to sell:</b> <br>" + getShortenedNum(sellAmount) + " mol";
 	}
 	else{
-		sellAmount = Math.trunc(per * invNum[hman.sellElement]);
+		sellAmount = Math.trunc(per * invNum[game.sellElement]);
 		document.getElementById("sellAmountText").innerHTML = "<b>Amount to sell:</b> <br>" + getShortenedNum(sellAmount) + " mol";
 	}
-	document.getElementById("sellCurrentPrice").innerHTML = "<b>Current Price:</b> <br>$" + getShortenedCash(invPri[hman.sellElement]) + "<br><b>Sale Amount:</b> <br>$" + getShortenedCash(invPri[hman.sellElement] * sellAmount);
+	document.getElementById("sellCurrentPrice").innerHTML = "<b>Current Price:</b> <br>$" + getShortenedCash(invPri[game.sellElement]) + "<br><b>Sale Amount:</b> <br>$" + getShortenedCash(invPri[game.sellElement] * sellAmount);
 }
 
 function setValueSellItem() {
-	hman.sellElement = hman.currentElement;
+	game.sellElement = game.currentElement;
+}
+
+function setA1Item(num){
+	switch(num){
+		case 1:
+			game.accelerator1Item1 = game.currentElement;
+			break;
+		case 2:
+			game.accelerator1Item2 = game.currentElement;
+			break;
+	}
+}
+
+function setA2Item(num){
+	switch(num){
+		case 1:
+			game.accelerator2Item1 = game.currentElement;
+			break;
+		case 2:
+			game.accelerator2Item2 = game.currentElement;
+			break;
+	}
+}
+
+function accelerator1Update(){
+	var invKey = Object.keys(game.inventory);
+	var invNum = Object.values(game.inventory);
+	var invPri = Object.values(game.prices);
+	var invCap = Object.values(game.caps);
+	
+	document.getElementById("inputA1AText").innerHTML = shorts[game.accelerator1Item1];
+	document.getElementById("inputA1A").title = invKey[game.accelerator1Item1];
+	document.getElementById("inputA1BText").innerHTML = shorts[game.accelerator1Item2];
+	document.getElementById("inputA1B").title = invKey[game.accelerator1Item2];
+}
+
+function accelerator2Update(){
+	var invKey = Object.keys(game.inventory);
+	var invNum = Object.values(game.inventory);
+	var invPri = Object.values(game.prices);
+	var invCap = Object.values(game.caps);
+	
+	document.getElementById("inputA2AText").innerHTML = shorts[game.accelerator2Item1];
+	document.getElementById("inputA2A").title = invKey[game.accelerator2Item1];
+	document.getElementById("inputA2BText").innerHTML = shorts[game.accelerator2Item2];
+	document.getElementById("inputA2B").title = invKey[game.accelerator2Item2];
 }
 
 function makeSale() {
-	var invKey = Object.keys(hman.inventory);
-	var invNum = Object.values(hman.inventory);
-	var invPri = Object.values(hman.prices);
-	var invCap = Object.values(hman.caps);
+	var invKey = Object.keys(game.inventory);
+	var invNum = Object.values(game.inventory);
+	var invPri = Object.values(game.prices);
+	var invCap = Object.values(game.caps);
 	
 	var per = document.getElementById("inputSell").value;
-	var sellAmount = Math.trunc((per/100) * invNum[hman.sellElement]);
+	var sellAmount = Math.trunc((per/100) * invNum[game.sellElement]);
 	
-	var price = invPri[hman.sellElement] * sellAmount;
+	var price = invPri[game.sellElement] * sellAmount;
 	
-	hman.cash += price;
-	hman.inventory[invKey[hman.sellElement]] -= sellAmount;
+	game.cash += price;
+	game.inventory[invKey[game.sellElement]] -= sellAmount;
 	
 }
 
 function autoSell() {
 	if(document.getElementById("autoSellCheck").checked){
 		
-		var invKey = Object.keys(hman.inventory);
-		var invNum = Object.values(hman.inventory);
-		var invPri = Object.values(hman.prices);
-		var invCap = Object.values(hman.caps);
+		var invKey = Object.keys(game.inventory);
+		var invNum = Object.values(game.inventory);
+		var invPri = Object.values(game.prices);
+		var invCap = Object.values(game.caps);
 		
 		var temp = document.getElementById("inputSell").value / 100;
-		if(invNum[hman.sellElement] >= (temp * invCap[hman.sellElement])){
-			var sellAmount = invNum[hman.sellElement];
+		if(invNum[game.sellElement] >= (temp * invCap[game.sellElement])){
+			var sellAmount = invNum[game.sellElement];
 	
-			var price = invPri[hman.sellElement] * sellAmount;
+			var price = invPri[game.sellElement] * sellAmount;
 	
-			hman.cash += price;
-			hman.inventory[invKey[hman.sellElement]] -= sellAmount;
+			game.cash += price;
+			game.inventory[invKey[game.sellElement]] -= sellAmount;
 		}
 	}
 }
 
 function newsUpdate() {
-	hman.logIndex = 0;
+	game.logIndex = 0;
 	
-	if(hman.gameTime >= 6){
-		hman.logIndex = 1;
+	if(game.gameTime >= 6){
+		game.logIndex = 1;
 	}
-	if(hman.gameTime >= 12){
-		hman.logIndex = 2;
+	if(game.gameTime >= 12){
+		game.logIndex = 2;
 	}
-	if(hman.gameTime >= 20){
-		hman.logIndex = 3;
+	if(game.gameTime >= 20){
+		game.logIndex = 3;
 	}
-	if(hman.gameTime >= 28){
-		hman.logIndex = 4;
+	if(game.gameTime >= 28){
+		game.logIndex = 4;
 	}
-	if(hman.gameTime >= 36){
-		hman.logIndex = 5;
+	if(game.gameTime >= 36){
+		game.logIndex = 5;
 	}
-	if(hman.gameTime >= 44){
-		hman.logIndex = 6;
+	if(game.gameTime >= 44){
+		game.logIndex = 6;
 	}
-	if(hman.gameTime >= 52){
-		hman.logIndex = 7;
+	if(game.gameTime >= 52){
+		game.logIndex = 7;
 	}
 	
 	
@@ -687,7 +755,7 @@ function newsUpdate() {
 	
 	var out = "";
 
-	for(var i = 0; i <= hman.logIndex; i++){
+	for(var i = 0; i <= game.logIndex; i++){
 		let n = tag[i];
 		out = out + n + "<br><br>";
 	}
@@ -696,7 +764,92 @@ function newsUpdate() {
 	//document.getElementById("newsBody").scrollTop = document.getElementById("newsBody").scrollHeight;
 }
 
+//=================================================================================================================================================================\\
+//Upgrades
 
+const growthFactor = [0.02, 0.05, 0.08 , 0.08];
+const priceBase = [20, 100, 500 ,1000];
+
+function clearUpgrades() {
+	var currUps = document.getElementById("buy").children;
+	
+	while (document.getElementById("buy").childElementCount > 0){
+		var div = currUps[0];
+		div.parentNode.removeChild(div);
+	}
+	
+}
+
+function createUpgrades() {
+	var upgradeInv = Object.values(game.upgrades);
+	var upgradeKey = Object.keys(game.upgrades);
+	
+	for(let i = 0; i < upgradeInv.length; i ++){
+		if(upgradeInv[i] < 100){
+			if(upgradeKey[i] === "hydrogenSpeed" && upgradeInv[i] >= 20){
+				
+			}
+			else{
+				var name = upgradeKey[i];
+			
+				var price = priceBase[i];
+				for(let k = 1; k <= upgradeInv[i]; k ++){
+					price = Math.pow(price, (1 + growthFactor[i]));
+				}
+				
+				var div = document.createElement("div");
+				document.getElementById("buy").appendChild(div);
+				div.id = name;
+				div.innerHTML = name + " " + (upgradeInv[i] + 1);
+				div.className = "iUpgrade";
+				div.style.textAlign = "center";
+				div.onclick = function() { upgradeClick(i); };
+				div.title = "Price: $" + getShortenedCash(price);
+		
+			}
+		}
+	}
+}
+
+function upgradeClick(index) {
+	var upgradeInv = Object.values(game.upgrades);
+	var upgradeKey = Object.keys(game.upgrades);
+	
+	var price = priceBase[index];
+	for(let i = 1; i <= upgradeInv[index]; i ++){
+		price = Math.pow(price, (1 + growthFactor[index]));
+		
+	}
+	
+	if(game.cash >= price){
+		game.upgrades[upgradeKey[index]] += 1;
+		clearUpgrades();
+		createUpgrades();
+		game.cash -= price;
+	}
+	
+}
+
+function applyUpgrades(){
+	game.caps.hydrogen = 1000;
+	game.hydrogenRate = 200;
+	game.prices.hydrogen = 0.5;
+	game.hydrogenAmount = 1;
+	
+	for(let i = 1; i <= game.upgrades.hydrogenCap; i ++){
+		game.caps.hydrogen *= 1.1;
+	}
+	for(let i = 1; i <= game.upgrades.hydrogenSpeed; i ++){
+		game.hydrogenRate /= 2;
+	}
+	for(let i = 1; i <= game.upgrades.hydrogenPrice; i ++){
+		game.prices.hydrogen *= 1.1;
+	}
+	for(let i = 1; i <= game.upgrades.hydrogenAmount; i ++){
+		game.hydrogenAmount *= 2;
+	}
+	
+}
 
 
 //=================================================================================================================================================================\\

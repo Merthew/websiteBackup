@@ -9,6 +9,14 @@ body {
 	font: 14px Times New Roman;
 	font-family: monospace;
 	
+	
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 
 #topbar {
@@ -196,7 +204,7 @@ body {
 	position: absolute;
 	left: 2px;
 	bottom: 2px;
-	background: #70C9C9;
+	background: linear-gradient(to right, #70C9C9 , #457A7A);
 }
 
 #news {
@@ -258,7 +266,12 @@ body {
 	top: 0px;
 	width: 200px;
 	height: 100%;
-	
+	overflow: vertical;
+	text-align: center;
+}
+
+#buy::-webkit-scrollbar {
+	width: 10px;
 }
 
 #inputSell {
@@ -349,6 +362,115 @@ body {
 	background: #E5E5E5;
 }
 
+#acceleratorOne {
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	width: 310px;
+	height: 310px;
+	background: #E5E5E5;
+	border: outset #70C9C9;
+}
+
+#acceleratorTwo {
+	position: absolute;
+	left: 390px;
+	bottom: 10px;
+	width: 310px;
+	height: 310px;
+	background: #E5E5E5;
+	border: outset #70C9C9;
+}
+
+#inputA1A{
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	width: 40px;
+	height: 40px;
+	border: 2px inset;
+	font-size: 20px;
+	font-family: monospace;
+	cursor: pointer;
+}
+
+#inputA1AText{
+	text-align:center;
+	width: 22px;
+	height: 23px;
+	position: absolute;
+	left: 8px;
+	top: 8px;
+	
+}
+
+#inputA1B{
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	width: 40px;
+	height: 40px;
+	border: 2px inset;
+	font-size: 20px;
+	font-family: monospace;
+	cursor: pointer;
+}
+
+#inputA1BText{
+	text-align:center;
+	width: 22px;
+	height: 23px;
+	position: absolute;
+	left: 8px;
+	top: 8px;
+	
+}
+
+#inputA2A{
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	width: 40px;
+	height: 40px;
+	border: 2px inset;
+	font-size: 20px;
+	font-family: monospace;
+	cursor: pointer;
+}
+
+#inputA2AText{
+	text-align:center;
+	width: 22px;
+	height: 23px;
+	position: absolute;
+	left: 8px;
+	top: 8px;
+	
+}
+
+#inputA2B{
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	width: 40px;
+	height: 40px;
+	border: 2px inset;
+	font-size: 20px;
+	font-family: monospace;
+	cursor: pointer;
+}
+
+#inputA2BText{
+	text-align:center;
+	width: 22px;
+	height: 23px;
+	position: absolute;
+	left: 8px;
+	top: 8px;
+	
+}
+
+
 
 /*
 *Settings page.
@@ -398,6 +520,17 @@ body {
 	width: 16px;
 	height: 16px;
 	border: 1px solid #000;
+}
+
+.iUpgrade{
+	width: 98%;
+	height: 18px;
+	border: 2px outset;
+	margin-top: 1px;
+	cursor: pointer;
+	
+
+	
 }
 
 input[type=number]::-webkit-inner-spin-button, 
