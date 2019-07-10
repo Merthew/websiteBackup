@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>This Is A Test</title>
+		<link href="style.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		
+		<div><b>Playing with RSA encryption.</b></div>
+		<div id="wrapper">
+			<div>Prime Numbers: </div>
+			<input type="number" id="primeOne" placeholder="Prime One"></input>
+			<input type="number" id="primeTwo" placeholder="Prime Two"></input>
+			<br>
+			<input type="button" id="bCalc" value="Calculate" onclick="calcPrime()" title="Calculates the math from the two input prime numbers."></input>
+			<input type="button" id="bGen" value="Generate" onclick="genPrime()" title="Generates two random prime numbers around 4 digits long."></input>
+			
+			<pre><div id="PrimeOut"></div></pre>
+			
+			<input type="number" id="inputKeyN" placeholder="Public Key: N"></input>
+			<input type="number" id="inputKeyE" placeholder="Public Key: E"></input>
+			<input type="number" id="inputKeyD" placeholder="Private Key: D"></input><br><br>
+			<input type="text" id="inputMessage" placeholder="Message"></input>
+			<input type="button" id="bCode" value="Encode" onclick="encode()" title="Encodes the input message using the keys inputed."></input>
+			<input type="button" id="bUnCode" value="Decode" onclick="decode()" title="Decodes the input message using the keys inputed."></input>
+		</div>
+		
+		
+	</body>
+	<script type="text/javascript" src="rsawork.js"></script>
+</html>

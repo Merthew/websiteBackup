@@ -15,6 +15,9 @@ function changeIFrame(num){
 	case 3:
 		iframe.src = "HMan/hman.html";
 		break;
+	case 4:
+		iframe.src = "RSAWork/rsawork.html";
+		break;
 	}
 	
 }
@@ -37,6 +40,10 @@ function shadeButton(num) {
 		var shadeButton = document.getElementById("bHMAN");
 		shadeButton.style.backgroundColor = "#B5B5B5";
 		break;
+	case 4:
+		var shadeButton = document.getElementById("bRSA");
+		shadeButton.style.backgroundColor = "#B5B5B5";
+		break;
 	}
 }
 
@@ -56,6 +63,10 @@ function unshadeButton(num) {
 		break;
 	case 3:
 		var shadeButton = document.getElementById("bHMAN");
+		shadeButton.style.backgroundColor = "#FFF";
+		break;
+	case 4:
+		var shadeButton = document.getElementById("bRSA");
 		shadeButton.style.backgroundColor = "#FFF";
 		break;
 	}
