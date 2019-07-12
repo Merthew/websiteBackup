@@ -666,6 +666,9 @@ function accelerator1Update(){
 	document.getElementById("inputA1A").title = invKey[game.accelerator1Item1];
 	document.getElementById("inputA1BText").innerHTML = shorts[game.accelerator1Item2];
 	document.getElementById("inputA1B").title = invKey[game.accelerator1Item2];
+	
+	document.getElementById("outputA1Text").innerHTML = shorts[game.accelerator1Item1 + game.accelerator1Item2 + 1];
+	document.getElementById("outputA1").title = invKey[game.accelerator1Item1 + game.accelerator1Item2 + 1];
 }
 
 function accelerator2Update(){
@@ -678,6 +681,9 @@ function accelerator2Update(){
 	document.getElementById("inputA2A").title = invKey[game.accelerator2Item1];
 	document.getElementById("inputA2BText").innerHTML = shorts[game.accelerator2Item2];
 	document.getElementById("inputA2B").title = invKey[game.accelerator2Item2];
+
+	document.getElementById("outputA2Text").innerHTML = shorts[game.accelerator2Item1 + game.accelerator2Item2 + 1];
+	document.getElementById("outputA2").title = invKey[game.accelerator2Item1 + game.accelerator2Item2 + 1];
 }
 
 function makeSale() {

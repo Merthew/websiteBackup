@@ -15,8 +15,7 @@ body {
 	-khtml-user-select: none; /* Konqueror HTML */
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* Internet Explorer/Edge */
-	user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
 #topbar {
@@ -388,7 +387,7 @@ body {
 	left: 8px;
 	width: 40px;
 	height: 40px;
-	border: 2px inset;
+	border: 2px outset;
 	font-size: 20px;
 	font-family: monospace;
 	cursor: pointer;
@@ -414,6 +413,7 @@ body {
 	font-size: 20px;
 	font-family: monospace;
 	cursor: pointer;
+	transform: rotate(270deg);
 }
 
 #inputA1BText{
@@ -423,7 +423,7 @@ body {
 	position: absolute;
 	left: 8px;
 	top: 8px;
-	
+	transform: rotate(90deg);
 }
 
 #inputA2A{
@@ -432,7 +432,7 @@ body {
 	left: 8px;
 	width: 40px;
 	height: 40px;
-	border: 2px inset;
+	border: 2px outset;
 	font-size: 20px;
 	font-family: monospace;
 	cursor: pointer;
@@ -458,6 +458,7 @@ body {
 	font-size: 20px;
 	font-family: monospace;
 	cursor: pointer;
+	transform: rotate(270deg);
 }
 
 #inputA2BText{
@@ -467,10 +468,48 @@ body {
 	position: absolute;
 	left: 8px;
 	top: 8px;
-	
+	transform: rotate(90deg);
 }
 
+#outputA1 {
+	position: absolute;
+	top: 182px;
+	left: 132px;
+	width: 40px;
+	height: 40px;
+	border: 2px outset;
+	font-size: 20px;
+	font-family: monospace;
+}
 
+#outputA1Text {
+	text-align:center;
+	width: 22px;
+	height: 23px;
+	position: absolute;
+	left: 8px;
+	top: 8px;
+}
+
+#outputA2 {
+	position: absolute;
+	top: 182px;
+	left: 132px;
+	width: 40px;
+	height: 40px;
+	border: 2px outset;
+	font-size: 20px;
+	font-family: monospace;
+}
+
+#outputA2Text {
+	text-align:center;
+	width: 22px;
+	height: 23px;
+	position: absolute;
+	left: 8px;
+	top: 8px;
+}
 
 /*
 *Settings page.
@@ -550,4 +589,51 @@ td {
 .empty{
 	border: 0px solid #000;
 	cursor: default;
+}
+
+.arrowTroughTop{
+	position:absolute;
+	border-top: 2px inset;
+	border-bottom: 2px outset;
+	border-left: 2px outset;
+	border-right: 2px inset;
+	left: 50px;
+	top: 19px;
+	width: 206px;
+	height: 10px;
+}
+
+.arrowTroughMid {
+	position:absolute;
+	border-top: 2px outset;
+	border-bottom: 2px outset;
+	border-left: 2px inset;
+	border-right: 2px outset;
+	left: 148px;
+	top: 31px;
+	width: 10px;
+	height: 97px;
+}
+
+.acceleratorCircle {
+	position: absolute;
+	left: 78px;
+	top: 130px;
+	border: 2px solid #9A9A9A;
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+}
+
+.acceleratorCircle:before {
+	background: none;
+	border: 2px solid #9A9A9A;
+	border-radius: 50%;
+	content: "";
+	display: block;
+	position: absolute;
+	top: 6px;
+	left: 6px;
+	right: 6px;
+	bottom: 6px;
 }
