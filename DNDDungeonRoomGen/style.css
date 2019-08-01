@@ -1,0 +1,33 @@
+body {
+	background-color: white;
+	border:1px solid #000;
+	width:800px;
+	height:800px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	font: 14px Times New Roman;
+	font-family: monospace;
+	
+	
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+#DungeonArea {
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	width: 200px;
+	height: 200px;
+	border: 1px solid #000;
+}
+
+#genDungeon {
+	position: absolute;
+	bottom: 5px;
+}

@@ -63,6 +63,8 @@ var game = {
 	accelerator1Item2: 0,
 	accelerator2Item1: 0,
 	accelerator2Item2: 0,
+	accel1On: false,
+	accel2On: false,
 	
 	inventory: {
 		hydrogen: 0,
@@ -656,21 +658,40 @@ function setA2Item(num){
 	}
 }
 
+var accel1Ticks = 0;
 function accelerator1Update(){
 	var invKey = Object.keys(game.inventory);
 	var invNum = Object.values(game.inventory);
 	var invPri = Object.values(game.prices);
 	var invCap = Object.values(game.caps);
 	
+	var product = game.accelerator1Item1 + game.accelerator1Item2 + 1;
+	
 	document.getElementById("inputA1AText").innerHTML = shorts[game.accelerator1Item1];
 	document.getElementById("inputA1A").title = invKey[game.accelerator1Item1];
 	document.getElementById("inputA1BText").innerHTML = shorts[game.accelerator1Item2];
 	document.getElementById("inputA1B").title = invKey[game.accelerator1Item2];
 	
-	document.getElementById("outputA1Text").innerHTML = shorts[game.accelerator1Item1 + game.accelerator1Item2 + 1];
-	document.getElementById("outputA1").title = invKey[game.accelerator1Item1 + game.accelerator1Item2 + 1];
+	document.getElementById("outputA1Text").innerHTML = shorts[product];
+	document.getElementById("outputA1").title = invKey[product];
+
+	document.getElementById("A1Progress").style.width = ((accel1Ticks / 1000 * 100) - 1) + "%";
+	
+	if(accel1Ticks >= 1000){
+		accel1Ticks = 0;
+		if(invNum[game.accelerator1Item1] >= 1 && invNum[game.accelerator1Item2] >= 1 && invNum[product] < invCap[product]) {
+			game.inventory[invKey[product]] += 1;
+			game.inventory[invKey[game.accelerator1Item1]] -= 1;
+			game.inventory[invKey[game.accelerator1Item2]] -= 1;
+		}
+	}
+	if(game.accel1On == true){
+		accel1Ticks ++;
+	}
 }
 
+
+var accel2Ticks = 0;
 function accelerator2Update(){
 	var invKey = Object.keys(game.inventory);
 	var invNum = Object.values(game.inventory);
@@ -684,6 +705,18 @@ function accelerator2Update(){
 
 	document.getElementById("outputA2Text").innerHTML = shorts[game.accelerator2Item1 + game.accelerator2Item2 + 1];
 	document.getElementById("outputA2").title = invKey[game.accelerator2Item1 + game.accelerator2Item2 + 1];
+	
+	if(accel2Ticks >= 1000){
+		accel2Ticks = 0;
+		if(invNum[game.accelerator2Item1] >= 1 && invNum[game.accelerator2Item2] >= 1 && invNum[product] < invCap[product]) {
+			game.inventory[invKey[product]] += 1;
+			game.inventory[invKey[game.accelerator2Item1]] -= 1;
+			game.inventory[invKey[game.accelerator2Item2]] -= 1;
+		}
+	}
+	if(game.accel2On == true){
+		accel2Ticks ++;
+	}
 }
 
 function makeSale() {

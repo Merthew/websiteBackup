@@ -79,7 +79,6 @@ var finished = true;
 var goal = 0;
 setInterval(() => {
 	if(finished){
-		console.log(goal);
 		goal = Math.floor(Math.random() * 6) + 1;
 		finished = false;
 	}
