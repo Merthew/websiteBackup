@@ -6,7 +6,6 @@ body {
 	position:absolute;
 	top:0px;
 	left:0px;
-	font: 14px Times New Roman;
 	font-family: monospace;
 	
 	
@@ -22,7 +21,7 @@ body {
 	position: absolute;
 	left: 5px;
 	top: 5px;
-	width: 200px;
+	width: 300px;
 	height: 200px;
 	border: 1px solid #000;
 }
@@ -30,4 +29,28 @@ body {
 #genDungeon {
 	position: absolute;
 	bottom: 5px;
+	left: 5px;
+}
+
+#Dungeon {
+	padding: 5px;
+}
+
+#LootArea {
+	position: absolute;
+	left: 5px;
+	top: 305px;
+	width: 300px;
+	height: 200px;
+	border: 1px solid #000;
+}
+
+#genLoot {
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+}
+
+#Loot {
+	padding: 5px;
 }
