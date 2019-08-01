@@ -1,5 +1,8 @@
 body {
-	background-color: white;
+	background-image: url("images/paper.jpg");
+	background-size: 801px 801px;
+	background-repeat: no-repeat;
+	background-position: 8px 8px;
 	border:1px solid #000;
 	width:800px;
 	height:800px;
@@ -11,11 +14,12 @@ body {
 
 #DungeonArea {
 	position: absolute;
-	left: 5px;
-	top: 5px;
+	left: 90px;
+	top: 30px;
 	width: 600px;
 	height: 200px;
 	border: 1px solid #000;
+	background-color: rgb(255, 255, 255, .3);
 }
 
 #genDungeon {
@@ -30,12 +34,13 @@ body {
 
 #LootArea {
 	position: absolute;
-	left: 5px;
-	top: 305px;
+	left: 90px;
+	top: 250px;
 	width: 600px;
 	width: 600px;
 	height: 200px;
 	border: 1px solid #000;
+	background-color: rgb(255, 255, 255, .3);
 }
 
 #genLoot {
@@ -46,4 +51,15 @@ body {
 
 #Loot {
 	padding: 5px;
+}
+
+#Credits {
+	position: absolute;
+	left: 90px;
+	bottom: 20px;
+	width: 600px;
+	height: 16px;
+	border: 1px solid #000;
+	background-color: rgb(255, 255, 255, .7);
+	text-align: center;
 }
