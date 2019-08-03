@@ -2,17 +2,18 @@
 	<head>
 		<title>DND Room Generator</title>
 		<link href="style.css" rel="stylesheet" type="text/css">
+		<link href='https://fonts.googleapis.com/css?family=Almendra Display' rel='stylesheet'>
 	</head>
-	<body>
+	<body style="white-space: pre-line">
 		<div id="DungeonArea">
-			<pre> Dungeon Generator:</pre>
-			<pre><div id="Dungeon"></div></pre>
+			<div id="dHead"><b><i>Dungeon Generator:</b></i></div>
+			<div id="Dungeon"></div>
 			<input id="genDungeon" type="button" value="Generate" onclick="generateDungeon()"></input>
 		</div>
 		
 		<div id="LootArea">
-			<pre> Loot Generator:</pre>
-			<pre><div id="Loot"></div></pre>
+			<div id="lHead"><b><i>Loot Generator:</b></i></div>
+			<div id="Loot"></div>
 			<input id="genLoot" type="button" value="Generate" onclick="generateLoot()"></input>
 		</div>
 		

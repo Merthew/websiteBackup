@@ -9,7 +9,22 @@ body {
 	position:absolute;
 	top:0px;
 	left:0px;
-	font-family: monospace;
+	font-size: 14px;
+	font-family: cursive;
+}
+
+#dHead {
+	position: absolute;
+	left: 5px;
+	font-size: 22px;
+	font-family: 'dungeonFont';
+}
+
+#lHead {
+	position: absolute;
+	left: 5px;
+	font-size: 22px;
+	font-family: 'dungeonFont';
 }
 
 #DungeonArea {
@@ -18,7 +33,7 @@ body {
 	top: 30px;
 	width: 600px;
 	height: 200px;
-	border: 1px solid #000;
+	
 	background-color: rgb(255, 255, 255, .3);
 }
 
@@ -26,6 +41,11 @@ body {
 	position: absolute;
 	bottom: 5px;
 	left: 5px;
+	font-style: Apple Chancery;
+	font-size: 14px;
+	font-family: cursive;
+	border: 0px;
+	background-color: rgb(255, 255, 255, .7);
 }
 
 #Dungeon {
@@ -39,7 +59,7 @@ body {
 	width: 600px;
 	width: 600px;
 	height: 200px;
-	border: 1px solid #000;
+	
 	background-color: rgb(255, 255, 255, .3);
 }
 
@@ -47,6 +67,11 @@ body {
 	position: absolute;
 	bottom: 5px;
 	left: 5px;
+	font-size: 14px;
+	font-family: cursive;
+	color: #000; 
+	border: 0px;
+	background-color: rgb(255, 255, 255, .7);
 }
 
 #Loot {
@@ -58,8 +83,19 @@ body {
 	left: 90px;
 	bottom: 20px;
 	width: 600px;
-	height: 16px;
+	height: 19px;
 	border: 1px solid #000;
 	background-color: rgb(255, 255, 255, .7);
 	text-align: center;
 }
+
+
+
+
+
+
+
+@font-face {
+  font-family: 'dungeonFont';
+  src: url('images/DUNGRG__.TTF') format('truetype');
+}  
