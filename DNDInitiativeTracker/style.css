@@ -1,0 +1,127 @@
+body {
+	background-image: url("images/paper.jpg");
+	background-size: 801px 801px;
+	background-repeat: no-repeat;
+	background-position: 8px 8px;
+	border:1px solid #000;
+	width:800px;
+	height:800px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size: 14px;
+	font-family: cursive;
+	white-space: pre;
+}
+
+#inputName{
+	position:relative;
+	left: 5px;
+	width: 200px;
+}
+
+#inputIni {
+	position: relative;
+	left: 210px;
+	top: -21px;
+	width: 200px;
+}
+
+#buttonSubmit {
+	position: relative;
+	left: 415px;
+	top: -42px;
+}
+
+#inputArea {
+	width: 600px;
+	margin: auto;
+	
+}
+
+/*#dHead {
+	position: absolute;
+	left: 5px;
+	font-size: 22px;
+	font-family: 'dungeonFont';
+}
+
+#lHead {
+	position: absolute;
+	left: 5px;
+	font-size: 22px;
+	font-family: 'dungeonFont';
+}
+
+#DungeonArea {
+	position: absolute;
+	left: 90px;
+	top: 30px;
+	width: 600px;
+	height: 200px;
+	
+	background-color: rgb(255, 255, 255, .3);
+}
+
+#genDungeon {
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+	font-style: Apple Chancery;
+	font-size: 14px;
+	font-family: cursive;
+	border: 0px;
+	background-color: rgb(255, 255, 255, .7);
+}
+
+#Dungeon {
+	padding: 5px;
+}
+
+#LootArea {
+	position: absolute;
+	left: 90px;
+	top: 250px;
+	width: 600px;
+	width: 600px;
+	height: 200px;
+	
+	background-color: rgb(255, 255, 255, .3);
+}
+
+#genLoot {
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+	font-size: 14px;
+	font-family: cursive;
+	color: #000; 
+	border: 0px;
+	background-color: rgb(255, 255, 255, .7);
+}
+
+#Loot {
+	padding: 5px;
+}*/
+
+#Credits {
+	position: absolute;
+	left: 90px;
+	bottom: 20px;
+	width: 600px;
+	height: 19px;
+	border: 1px solid #000;
+	background-color: rgb(255, 255, 255, .7);
+	text-align: center;
+}
+
+
+
+
+
+
+
+@font-face {
+  font-family: 'dungeonFont';
+  src: url('images/DUNGRG__.TTF') format('truetype');
+}  
