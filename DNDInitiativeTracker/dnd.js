@@ -18,7 +18,7 @@ function addElement(){
 
 	//2) sort:
 	list.sort(function(a, b) {
-		return ((Number(a.age) < Number(b.age)) ? -1 : ((Number(a.age) == Number(b.age)) ? 0 : 1));
+		return ((Number(a.age) > Number(b.age)) ? -1 : ((Number(a.age) == Number(b.age)) ? 0 : 1));
 		//Sort could be modified to, for example, sort on the age 
 		// if the name is the same.
 	});
