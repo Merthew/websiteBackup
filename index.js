@@ -44,6 +44,14 @@ function shadeButton(num) {
 		var shadeButton = document.getElementById("bRSA");
 		shadeButton.style.backgroundColor = "#B5B5B5";
 		break;
+	case 5:
+		var shadeButton = document.getElementById("dnd1");
+		shadeButton.style.backgroundColor = "#B5B5B5";
+		break;
+	case 6:
+		var shadeButton = document.getElementById("dnd2");
+		shadeButton.style.backgroundColor = "#B5B5B5";
+		break;
 	}
 }
 
@@ -67,6 +75,14 @@ function unshadeButton(num) {
 		break;
 	case 4:
 		var shadeButton = document.getElementById("bRSA");
+		shadeButton.style.backgroundColor = "#FFF";
+		break;
+	case 5:
+		var shadeButton = document.getElementById("dnd1");
+		shadeButton.style.backgroundColor = "#FFF";
+		break;
+	case 6:
+		var shadeButton = document.getElementById("dnd2");
 		shadeButton.style.backgroundColor = "#FFF";
 		break;
 	}
