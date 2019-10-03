@@ -25,26 +25,35 @@ function addElement(){
 	for(let i = 0; i < names.length; i ++){
 		var node = document.createElement("LI");
 		node.id="L" + i;
-		var textn = document.createTextNode(names[i] + val[i] + "\t");
+		var textn = document.createTextNode(names[i]);
+		var iniIn = document.createElement("INPUT");
+		iniIn.type = "number";
+		iniIn.value = val[i];
+		iniIn.className = "inputNumber";
+		iniIn.onblur = function () {			
+			val[i] = iniIn.value;
+			changeElement();
+		}
 		var bDel = document.createElement("INPUT");
 		bDel.type="button";
 		bDel.value = "Delete";
 		bDel.onclick = function() {
-				itemList.removeChild(document.getElementById("L" + i));
-				if(names.length == 1){
-					names = [];
-				}
-				else{
-					names = arrayRemove(names, names[i]);
-				}
-				if(val.length == 1){
-					val = [];
-				}
-				else{
-					val = arrayRemove(val, val[i]);
-				}
+			itemList.removeChild(document.getElementById("L" + i));
+			if(names.length == 1){
+				names = [];
+			}
+			else{
+				names = arrayRemove(names, names[i]);
+			}
+			if(val.length == 1){
+				val = [];
+			}
+			else{
+				val = arrayRemove(val, val[i]);
+			}
 		};
 		node.appendChild(textn);
+		node.appendChild(iniIn);
 		node.appendChild(bDel);
 		itemList.appendChild(node);
 	}
@@ -68,6 +77,58 @@ function addElement(){
 	}
 	
 }
+
+function changeElement() {
+	var itemList = document.getElementById("itemList");
+
+	sortArrays();
+	
+	const itemListNode = document.getElementById("itemList");
+	while (itemListNode.firstChild) {
+		itemListNode.removeChild(itemListNode.firstChild);
+	}
+	
+	for(let i = 0; i < names.length; i ++){
+		var node = document.createElement("LI");
+		node.id="L" + i;
+		var textn = document.createTextNode(names[i]);
+		var iniIn = document.createElement("INPUT");
+		iniIn.type = "number";
+		iniIn.value = val[i];
+		iniIn.className = "inputNumber";
+		iniIn.oninput = function () {			
+			val[i] = iniIn.value;
+			addElement();
+		}
+		var bDel = document.createElement("INPUT");
+		bDel.type="button";
+		bDel.value = "Delete";
+		bDel.onclick = function() {
+			itemList.removeChild(document.getElementById("L" + i));
+			if(names.length == 1){
+				names = [];
+			}
+			else{
+				names = arrayRemove(names, names[i]);
+			}
+			if(val.length == 1){
+				val = [];
+			}
+			else{
+				val = arrayRemove(val, val[i]);
+			}
+		};
+		node.appendChild(textn);
+		node.appendChild(iniIn);
+		node.appendChild(bDel);
+		itemList.appendChild(node);
+	}
+	
+}
+
+
+
+
 
 function sortArrays(){
 	var list = [];
