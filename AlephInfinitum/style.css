@@ -1,0 +1,10 @@
+#wrapper{
+	position: absolute;
+	left: 50%;
+	margin-left: -400px;
+	
+}
+
+#canvas{
+	border: 1px solid;
+}
