@@ -1,44 +1,22 @@
 <html>
 	<head>
-		<title>Aleph_Null</title>
-		<link rel="shortcut icon" href="null_icon.ico" />
+		<Title>Aleph_Null</title>
+		<link rel="shortcut icon" href="resources/null_icon.ico" />
+		<link href='https://fonts.googleapis.com/css?family=Armata' rel='stylesheet'>
 		<link href="style.css" rel="stylesheet" type="text/css">
-		<script type="text/javascript" src="index.js"></script>
+		<script type="text/javascript" src="main.js"></script>
 		
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143689599-1"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-
-			gtag('config', 'UA-143689599-1');
-		</script>
-
 	</head>
-	<body>
-		<div id="topbar">
-			<img id="logo" src="logo.png" />
-		</div>
-		<div id="sidebar">
-			<div id="bHome" onclick="changeIFrame(0)" onmouseover="shadeButton(0)" onmouseleave="unshadeButton(0)" class="tooltip">Home</div>
-			<div id="bVectorWork" onclick="changeIFrame(1)" onmouseover="shadeButton(1)" onmouseleave="unshadeButton(1)" class="tooltip">Vectors</div>
-			<div id="bTIAGv2" onclick="changeIFrame(2)" onmouseover="shadeButton(2)" onmouseleave="unshadeButton(2)" class="tooltip">TIAG v0.2<span class="tooltiptext">Abandoned</span></div>
-			<div id="bHMAN" onclick="changeIFrame(3)" onmouseover="shadeButton(3)" onmouseleave="unshadeButton(3)" class="tooltip">Hydrogen<span class="tooltiptext">Abandoned</span></div>
-			<div id="bRSA" onclick="changeIFrame(4)" onmouseover="shadeButton(4)" onmouseleave="unshadeButton(4)" class="tooltip">RSA<span class="tooltiptext">Somewhat broken.</span></div>
+	<body onload="onLoad()">
+		<div id="toolbar">
 			
-			<div id="dnd1" onclick="location.href='./DNDDungeonRoomGen/dnd.html';" onmouseover="shadeButton(5)" onmouseleave="unshadeButton(5)" class="tooltip">DND Rooms</div>
-			<div id="dnd2" onclick="location.href='./DNDInitiativeTracker/dnd.html';" onmouseover="shadeButton(6)" onmouseleave="unshadeButton(6)" class="tooltip">DND Initative</div>
 		</div>
-		
-		<iframe id="Frame" src="Home/home.html"></iframe>
-		
-		<div id="bottombar">
-			<!--<a href="https://discord.gg/S8SGWub" target="_blank"><img src="docs/images/Discord-Logo.png" id="discordLink"></img></a>-->
+		<div id="bodyWrapper">
+			<div id="head1"><u>Welcome</u></div>
+			<div id=""></div>
 		</div>
+		<div id="bottom">
 		
-		
+		</div>
 	</body>
-
-	
 </html>
