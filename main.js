@@ -1,9 +1,9 @@
 function onLoad(){
-	var reader = new FileReader();
-	var posts = new File([""], ".\docs\posts.txt");
-	reader.readAsText(posts);
-	reader.onload = function() {
-		console.log(reader.result);
-	};
-	//console.log(reader.result);
+	var raw = "";
+	$.get( "http:Merthew.surge.sh/docs/posts.txt", function( data ) {
+		var text = data;
+		raw = data;
+	});
+	
+	console.log(raw);
 }
