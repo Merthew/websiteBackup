@@ -34,7 +34,11 @@ body{
 }
 
 #updates{
-	width: 50%;
+	margin-top: 10px;
+	margin-left: 10px;
+	width: calc(50% - 20px);
 	text-align:justify;
 	padding: 5px;
+	background: #c2c2c2;
+	border: inset;
 }
