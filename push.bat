@@ -2,4 +2,4 @@ git pull
 git add *
 git commit -m "update"
 git push
-surge . "merthew.surge.sh"
+surge . --domain "https://merthew.surge.sh"
