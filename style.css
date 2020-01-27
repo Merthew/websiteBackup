@@ -56,7 +56,8 @@ body{
 	text-align:justify;
 	padding: 5px;
 	background: #fff;
-
+	padding-left: 20px;
+	border-left: 1px solid #ccc;
 }
 
 #head2 {
