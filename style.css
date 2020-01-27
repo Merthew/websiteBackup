@@ -70,6 +70,13 @@ body{
 	top: 10px;
 }
 
+#menuButton{
+	position: absolute;
+	right: 10px;
+	top: 8px;
+	cursor:pointer;
+}
+
 .button {
 	margin: 5px;
 	border: outset;
