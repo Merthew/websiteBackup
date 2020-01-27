@@ -80,7 +80,7 @@ body{
 }
 
 #indexButtonWrapper{
-	position: absolute;
+	position: relative;
 }
 
 .button {
