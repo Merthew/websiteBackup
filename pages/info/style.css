@@ -1,0 +1,112 @@
+body{
+	/*background: #eee;*/
+	background: #fff;
+	text-align: center;
+	font-family: arial,sans-serif;
+	font-size: 13px;
+}
+
+#toolbar{
+	position:absolute;
+	width: calc(100%);
+	height: 48px;
+	background: white;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	border-bottom: 1px solid #ccc;
+}
+
+#bodyWrapper{
+	text-align: center;
+	width: calc(100% - 200px);
+	background: white;
+	position: absolute;
+	top: 68px;
+	left: 50%;
+	margin-left: calc(100px - 50%); 
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-radius: 3px;
+}
+
+#head1 {
+	font-size: 26;
+	font-family: 'Armata';
+}
+
+#updates{
+	margin-top: 10px;
+	margin-left: 10px;
+	width: calc(50% - 40px);
+	text-align:justify;
+	padding: 10px;
+	background: #fff;
+	border-right: 1px solid #ccc;
+	padding-right: 20px;
+}
+
+#index {
+	text-align:center;
+	margin-top: 10px;
+	position:absolute;
+	right: 10px;
+	top: 52px;
+	width: calc(50% - 40px);
+	text-align:justify;
+	padding: 5px;
+	background: #fff;
+
+}
+
+#head2 {
+	text-align:center;
+	font-size: 18px;
+}
+
+#tabsWrapper{
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+
+#menuButton{
+	position: absolute;
+	right: 10px;
+	top: 8px;
+	cursor:pointer;
+}
+
+#indexButtonWrapper{
+	position: absolute;
+}
+
+.button {
+	color: black;
+	text-decoration: none;
+	line-height: 28px;
+	background: #fff;
+	text-align: left;
+	margin: 2px;
+	cursor:pointer;
+	display: inline;
+}
+
+.button:hover {
+	text-decoration: underline;
+	color: #333;
+}
+
+.buttonTool {
+	color: black;
+	text-decoration: none;
+	line-height: 28px;
+	cursor:pointer;
+	display: inline;
+	padding-left: 10px;
+}
+
+.buttonTool:hover {
+	text-decoration: underline;
+	color: #333;
+}
