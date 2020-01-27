@@ -45,6 +45,18 @@ body{
 	padding-right: 20px;
 }
 
+#about{
+	
+	margin-top: 10px;
+	position:absolute;
+	right: 10px;
+	top: 52px;
+	width: calc(50% - 40px);
+	text-align:justify;
+	padding: 10px;
+	background: #fff;
+}
+
 #tabsWrapper{
 	position: absolute;
 	left: 10px;
