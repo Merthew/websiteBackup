@@ -61,6 +61,7 @@ body{
 }
 
 #head2 {
+	position: relative;
 	text-align:center;
 	font-size: 18px;
 }
