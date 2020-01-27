@@ -46,7 +46,7 @@ body{
 }
 
 #about{
-	
+	border-left: 1px solid #ccc;
 	margin-top: 10px;
 	position:absolute;
 	right: 10px;
@@ -55,6 +55,7 @@ body{
 	text-align:justify;
 	padding: 10px;
 	background: #fff;
+	padding-left: 20px;
 }
 
 #tabsWrapper{
